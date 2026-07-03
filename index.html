@@ -1,867 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Communications in Trekking - English Lesson</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communications in Trekking – English Self-Study</title>
+<meta name="description" content="Self-study English lesson: Communications in Trekking. A1-B1 level with dialogue, vocabulary, IPA and shadowing exercises.">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--green-900:#1b4332;--green-700:#2d6a4f;--green-500:#40916c;--green-300:#74c69d;--green-100:#d8f3dc;--orange:#f4a261;--orange-dark:#e76f51;--bg:#f8faf8;--card:#fff;--text:#1a2e1a;--muted:#5a7a5a;--radius:1rem;--shadow:0 4px 24px rgba(27,67,50,.10)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
 
-        :root {
-            --pastel-bg: #fdfbf7;
-            --pastel-blue: #C7CEEA;
-            --pastel-green: #B5EAD7;
-            --pastel-yellow: #E2F0CB;
-            --pastel-orange: #FFDAC1;
-            --pastel-pink: #FFB7B2;
-            --pastel-red: #FF9AA2;
-            --text-main: #3d405b;
-        }
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--green-900);padding:.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-brand{color:#fff;font-weight:800;font-size:1rem;white-space:nowrap}
+.nav-links{display:flex;gap:.25rem;flex-wrap:wrap}
+.nav-links a{color:rgba(255,255,255,.75);font-size:.82rem;font-weight:600;padding:.4rem .75rem;border-radius:2rem;transition:.2s}
+.nav-links a:hover,.nav-links a.active{background:var(--green-500);color:#fff}
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            font-family: 'Nunito', sans-serif;
-            background-color: var(--pastel-bg);
-            color: var(--text-main);
-            overflow: hidden; /* Prevent scrolling in presentation mode */
-        }
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--green-900),var(--green-700));color:#fff;padding:4rem 1.5rem 3rem;text-align:center}
+.hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;margin-bottom:.75rem;line-height:1.2}
+.hero p{color:var(--green-100);font-size:1.05rem;max-width:560px;margin:0 auto 2rem}
+.unit-cards{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+.unit-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);padding:1rem 1.25rem;color:#fff;font-weight:700;font-size:.9rem;backdrop-filter:blur(8px);cursor:pointer;transition:.2s;text-align:center;min-width:140px}
+.unit-card:hover{background:rgba(255,255,255,.22);transform:translateY(-2px)}
+.unit-card span{display:block;font-size:.75rem;font-weight:500;color:var(--green-100);margin-top:.25rem}
 
-        /* Slide Transition & Layout */
-        #presentation-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
+/* SECTIONS */
+.unit-section{padding:3rem 1.5rem;max-width:900px;margin:0 auto}
+.unit-section+.unit-section{border-top:2px solid var(--green-100)}
+.unit-label{font-size:.78rem;font-weight:700;color:var(--green-500);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
+.unit-title{font-size:clamp(1.3rem,3vw,1.9rem);font-weight:800;color:var(--green-900);margin-bottom:1.5rem}
 
-        .slide-element {
-            display: none;
-            width: 90%;
-            max-width: 1100px;
-            height: 85%;
-            background: white;
-            border-radius: 2rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            padding: 3rem 4rem;
-            flex-direction: column;
-            justify-content: center;
-            border: 4px solid var(--pastel-blue);
-            animation: fadeIn 0.4s ease-out;
-            box-sizing: border-box;
-            position: relative;
-            overflow-y: auto;
-        }
-        
-        .slide-element::-webkit-scrollbar { width: 8px; }
-        .slide-element::-webkit-scrollbar-thumb { background: var(--pastel-blue); border-radius: 10px; }
+/* TABS */
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.tab-btn{padding:.5rem 1rem;border-radius:2rem;border:2px solid var(--green-300);background:#fff;color:var(--green-700);font-weight:600;font-size:.85rem;cursor:pointer;transition:.2s;font-family:inherit}
+.tab-btn.active{background:var(--green-700);color:#fff;border-color:var(--green-700)}
+.tab-pane{display:none}.tab-pane.active{display:block}
 
-        .slide-element.active {
-            display: flex;
-        }
+/* DIALOGUE */
+.dialogue{background:var(--green-100);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem}
+.dialogue-line{display:flex;gap:.75rem;align-items:flex-start;padding:.6rem 0;border-bottom:1px solid rgba(27,67,50,.08)}
+.dialogue-line:last-child{border:none}
+.speaker{font-weight:700;font-size:.82rem;white-space:nowrap;padding:.2rem .6rem;border-radius:1rem;flex-shrink:0}
+.sp-male{background:var(--green-900);color:#fff}
+.sp-female{background:var(--orange-dark);color:#fff}
+.line-text{flex:1;font-size:.95rem}
+.play-btn{background:none;border:none;cursor:pointer;font-size:1.1rem;flex-shrink:0;padding:.1rem .3rem;opacity:.7;transition:.2s}
+.play-btn:hover{opacity:1;transform:scale(1.2)}
+.play-all{display:inline-flex;align-items:center;gap:.5rem;background:var(--orange);color:#fff;border:none;border-radius:2rem;padding:.6rem 1.2rem;font-weight:700;font-size:.9rem;cursor:pointer;font-family:inherit;margin-bottom:1rem;transition:.2s}
+.play-all:hover{background:var(--orange-dark)}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px) scale(0.98); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
+/* Q&A */
+.qa-grid{display:grid;gap:1rem}
+.qa-item{background:#fff;border-radius:.75rem;border:1.5px solid var(--green-100);padding:1rem;box-shadow:var(--shadow)}
+.qa-q{font-weight:700;color:var(--green-900);margin-bottom:.5rem;font-size:.95rem}
+.qa-a{display:flex;align-items:center;gap:.5rem;color:var(--green-700);font-size:.9rem}
+.ipa{color:var(--muted);font-size:.8rem;font-family:monospace;margin-top:.2rem}
 
-        /* Buttons & UI */
-        .btn {
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-        .btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
-        .btn:active { transform: translateY(0); }
+/* PRONUNCIATION */
+.shadow-list{display:grid;gap:.75rem}
+.shadow-item{background:#fff;border-radius:.75rem;border:1.5px solid var(--green-100);padding:1rem;display:flex;gap:.75rem;align-items:flex-start;box-shadow:var(--shadow)}
+.shadow-text{flex:1}
+.shadow-en{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+.shadow-ipa{font-size:.78rem;color:var(--muted);font-family:monospace}
 
-        .play-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--pastel-green);
-            color: #1a5640;
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            cursor: pointer;
-            border: none;
-            margin-right: 8px;
-            vertical-align: middle;
-            flex-shrink: 0;
-        }
-        .play-btn:hover { background: #96dcc6; }
+/* VOCAB */
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.vocab-card{background:#fff;border-radius:var(--radius);border:1.5px solid var(--green-100);padding:1.25rem;box-shadow:var(--shadow)}
+.vocab-type{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.2rem .5rem;border-radius:.5rem;display:inline-block;margin-bottom:.5rem}
+.type-word{background:var(--green-100);color:var(--green-700)}
+.type-chunk{background:#fff3e0;color:#e65100}
+.vocab-word{font-size:1.2rem;font-weight:800;color:var(--green-900);display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.vocab-ipa{font-size:.82rem;color:var(--muted);font-family:monospace;margin:.3rem 0 .75rem}
+.vocab-ex{display:flex;flex-direction:column;gap:.4rem}
+.ex-item{background:var(--bg);border-radius:.5rem;padding:.5rem .75rem;font-size:.85rem;display:flex;gap:.5rem;align-items:flex-start}
+.ex-text{flex:1}
+.level{font-size:.7rem;font-weight:700;background:var(--green-300);color:var(--green-900);padding:.1rem .35rem;border-radius:.4rem;white-space:nowrap}
 
-        .play-all-btn {
-            background: var(--pastel-orange);
-            color: #8c5b35;
-            padding: 10px 20px;
-            border-radius: 999px;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: none;
-            cursor: pointer;
-            margin-bottom: 1rem;
-        }
-        .play-all-btn:hover { background: #f0c3a2; }
+/* PRACTICE SECTION */
+.practice-section{background:var(--green-900);color:#fff;padding:3rem 1.5rem}
+.practice-inner{max-width:900px;margin:0 auto}
+.practice-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.75rem;margin-top:1.5rem}
+.practice-q{background:rgba(255,255,255,.08);border-radius:.75rem;padding:.9rem 1rem;font-size:.9rem;border:1px solid rgba(255,255,255,.1)}
 
-        .ipa-text { color: #888; font-size: 0.9em; font-family: Arial, sans-serif; }
-        
-        /* Highlight words */
-        .hl-word { font-weight: 800; color: #d66464; font-size: 1.1em; }
-        .hl-chunk { font-weight: 800; color: #4376b3; font-size: 1.1em; }
+/* SETTINGS */
+.settings-bar{position:fixed;bottom:1rem;right:1rem;z-index:99}
+.settings-btn{background:var(--green-900);color:#fff;border:none;border-radius:50%;width:3rem;height:3rem;font-size:1.2rem;cursor:pointer;box-shadow:var(--shadow);transition:.2s}
+.settings-btn:hover{background:var(--green-700);transform:scale(1.1)}
+.settings-panel{display:none;background:#fff;border-radius:var(--radius);padding:1.25rem;box-shadow:0 8px 32px rgba(0,0,0,.15);margin-bottom:.75rem;min-width:240px;border:2px solid var(--green-100)}
+.settings-panel.show{display:block}
+.settings-panel label{display:block;font-size:.82rem;font-weight:600;color:var(--muted);margin-bottom:.3rem;margin-top:.75rem}
+.settings-panel select{width:100%;padding:.4rem;border-radius:.5rem;border:1.5px solid var(--green-100);font-family:inherit;font-size:.85rem}
 
-        /* Modal */
-        #settings-modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.4);
-            z-index: 100;
-            justify-content: center;
-            align-items: center;
-        }
-        #settings-modal.show { display: flex; }
-
-        /* --- BỘ MÃ CHỐNG LỖI CSS PRINT TUYỆT ĐỐI --- */
-        @media print {
-            /* 1. Mở khóa chống tràn trang và chiều cao ảo (Khắc phục lỗi 0 KB) */
-            html, body {
-                height: auto !important;
-                overflow: visible !important;
-                background-color: white !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            /* 2. Ẩn thanh công cụ UI */
-            .no-print, #toolbar, #navigation, #settings-modal {
-                display: none !important;
-            }
-
-            /* 3. Dàn trang danh sách tuyến tính, ép chiều cao thực */
-            #presentation-container {
-                display: block !important;
-                height: auto !important;
-                position: relative !important;
-            }
-
-            /* 4. Khắc phục lỗi chồng chéo, ép mỗi slide vừa vặn 1 trang giấy A4 Ngang */
-            .slide-element {
-                display: flex !important; /* Trả lại Flexbox để căn giữa nội dung bên trong */
-                width: 100% !important;
-                height: 100vh !important; /* Ép đúng 1 trang giấy */
-                max-width: none !important;
-                margin: 0 !important; /* Sửa lỗi lệch Top-Left */
-                border: none !important;
-                border-bottom: 1px solid #eee !important;
-                box-shadow: none !important;
-                page-break-after: always;
-                page-break-inside: avoid;
-                border-radius: 0 !important;
-                opacity: 1 !important;
-                transform: none !important;
-            }
-
-            /* 5. Sửa lỗi in đậm nét chữ I và l */
-            * {
-                text-rendering: geometricPrecision !important;
-                -webkit-font-smoothing: antialiased !important;
-            }
-        }
-    </style>
+@media(max-width:600px){
+  nav{padding:.6rem 1rem}
+  .nav-brand{font-size:.85rem}
+  .nav-links a{font-size:.75rem;padding:.3rem .5rem}
+  .hero{padding:2.5rem 1rem 2rem}
+  .unit-section{padding:2rem 1rem}
+  .vocab-grid{grid-template-columns:1fr}
+  .practice-grid{grid-template-columns:1fr}
+  .unit-card{min-width:120px;font-size:.85rem}
+}
+</style>
 </head>
 <body>
+<nav>
+  <div class="nav-brand">🏔️ Trekking English</div>
+  <div class="nav-links">
+    <a href="#unit1" class="active">Unit 1</a>
+    <a href="#unit2">Unit 2</a>
+    <a href="#unit3">Unit 3</a>
+    <a href="#practice">Practice</a>
+  </div>
+</nav>
 
-    <!-- Top Toolbar -->
-    <div id="toolbar" class="fixed top-4 right-4 flex gap-3 z-50 no-print">
-        <button onclick="toggleSettings()" class="btn bg-white border-2 border-gray-200 text-gray-600 p-3 rounded-full shadow-md flex items-center justify-center">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-        </button>
-        <button onclick="window.print()" class="btn bg-blue-500 text-white font-bold py-2 px-5 rounded-full shadow-md flex items-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-            Tải PDF
-        </button>
+<section class="hero">
+  <h1>🏔️ Communications in Trekking</h1>
+  <p>Self-study English · Level A1–B1 · 3 Units · Dialogue · Shadowing · Vocabulary</p>
+  <div class="unit-cards">
+    <a href="#unit1" class="unit-card">Unit 1<span>Meeting the Guide</span></a>
+    <a href="#unit2" class="unit-card">Unit 2<span>On the Trail</span></a>
+    <a href="#unit3" class="unit-card">Unit 3<span>At the Campsite</span></a>
+    <a href="#practice" class="unit-card">🎯<span>Reflex Practice</span></a>
+  </div>
+</section>
+
+<!-- ═══ UNIT 1 ═══ -->
+<div class="unit-section" id="unit1">
+  <div class="unit-label">Unit 1</div>
+  <div class="unit-title">Meeting the Guide & Trail Briefing</div>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('u1','dialogue',this)">💬 Dialogue</button>
+    <button class="tab-btn" onclick="switchTab('u1','qa',this)">❓ Q&amp;A Drill</button>
+    <button class="tab-btn" onclick="switchTab('u1','shadow',this)">🎙️ Shadowing</button>
+    <button class="tab-btn" onclick="switchTab('u1','vocab',this)">📖 Vocabulary</button>
+  </div>
+
+  <div id="u1-dialogue" class="tab-pane active">
+    <button class="play-all" onclick="playConv(conv1)">▶ Play All</button>
+    <div class="dialogue">
+      <div class="dialogue-line">
+        <span class="speaker sp-male">Alex</span>
+        <span class="line-text">Hello everyone! Welcome to the mountain trail. My name is Alex, and I will be your guide today. Are you ready for the hike?</span>
+        <button class="play-btn" onclick="speak('Hello everyone! Welcome to the mountain trail. My name is Alex, and I will be your guide today. Are you ready for the hike?','male')">🔊</button>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker sp-female">Sarah</span>
+        <span class="line-text">Hi Alex! I am Sarah. Yes, I am very excited, but a little nervous. Is the trail very difficult?</span>
+        <button class="play-btn" onclick="speak('Hi Alex! I am Sarah. Yes, I am very excited, but a little nervous. Is the trail very difficult?','female')">🔊</button>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker sp-male">Alex</span>
+        <span class="line-text">Nice to meet you, Sarah. Do not worry — the first part is easy, but it gets steeper later. Do you have enough water and snacks in your backpack?</span>
+        <button class="play-btn" onclick="speak('Nice to meet you, Sarah. Do not worry, the first part is easy, but it gets steeper later. Do you have enough water and snacks in your backpack?','male')">🔊</button>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker sp-female">Sarah</span>
+        <span class="line-text">Yes, I have two bottles of water and some energy bars. Should I wear my jacket now?</span>
+        <button class="play-btn" onclick="speak('Yes, I have two bottles of water and some energy bars. Should I wear my jacket now?','female')">🔊</button>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker sp-male">Alex</span>
+        <span class="line-text">No, it is quite warm right now — keep it in your bag. We will take short breaks every thirty minutes. Let's start walking and enjoy the beautiful nature!</span>
+        <button class="play-btn" onclick="speak('No, it is quite warm right now, keep it in your bag. We will take short breaks every thirty minutes. Lets start walking and enjoy the beautiful nature!','male')">🔊</button>
+      </div>
     </div>
+  </div>
 
-    <!-- Settings Modal -->
-    <div id="settings-modal" class="no-print">
-        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl border-4 border-gray-100 relative">
-            <button onclick="toggleSettings()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            <h2 class="text-2xl font-bold mb-6 text-gray-800">Cài đặt Giọng đọc A.I</h2>
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-sm font-semibold text-gray-600 mb-1">Giọng Nam (Alex/Khách Hàng):</label>
-                    <select id="voice-male" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-300"></select>
-                </div>
-                <div>
-                    <label class="block text-sm font-semibold text-gray-600 mb-1">Giọng Nữ (Sarah/Nhân Viên):</label>
-                    <select id="voice-female" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-300"></select>
-                </div>
-                <p class="text-xs text-gray-500 mt-4 italic">* Ưu tiên chọn các giọng có chữ "Natural" hoặc "Online" của trình duyệt Edge/Chrome để âm thanh tự nhiên nhất.</p>
-            </div>
-        </div>
+  <div id="u1-qa" class="tab-pane">
+    <div class="qa-grid" id="u1-qa-list"></div>
+  </div>
+  <div id="u1-shadow" class="tab-pane">
+    <div class="shadow-list" id="u1-shadow-list"></div>
+  </div>
+  <div id="u1-vocab" class="tab-pane">
+    <div class="vocab-grid" id="u1-vocab-grid"></div>
+  </div>
+</div>
+
+<!-- ═══ UNIT 2 ═══ -->
+<div class="unit-section" id="unit2">
+  <div class="unit-label">Unit 2</div>
+  <div class="unit-title">On the Trail — Conditions & Getting Help</div>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('u2','dialogue',this)">💬 Dialogue</button>
+    <button class="tab-btn" onclick="switchTab('u2','qa',this)">❓ Q&amp;A Drill</button>
+    <button class="tab-btn" onclick="switchTab('u2','shadow',this)">🎙️ Shadowing</button>
+    <button class="tab-btn" onclick="switchTab('u2','vocab',this)">📖 Vocabulary</button>
+  </div>
+  <div id="u2-dialogue" class="tab-pane active">
+    <button class="play-all" onclick="playConv(conv2)">▶ Play All</button>
+    <div class="dialogue">
+      <div class="dialogue-line">
+        <span class="speaker sp-male">Alex</span>
+        <span class="line-text">How is everyone doing? We are halfway to the top. Sarah, are your hiking boots comfortable?</span>
+        <button class="play-btn" onclick="speak('How is everyone doing? We are halfway to the top. Sarah, are your hiking boots comfortable?','male')">🔊</button>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker sp-female">Sarah</span>
+        <span class="line-text">Yes, they are fine, thank you. But my backpack feels a bit heavy. Can we stop for a moment? I need to catch my breath.</span>
+        <button class="play-btn" onclick="speak('Yes, they are fine, thank you. But my backpack feels a bit heavy. Can we stop for a moment? I need to catch my breath.','female')">🔊</button>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker sp-male">Alex</span>
+        <span class="line-text">Of course. Let's take a five-minute break here by the river. Remember to drink plenty of water to stay hydrated.</span>
+        <button class="play-btn" onclick="speak('Of course. Lets take a five-minute break here by the river. Remember to drink plenty of water to stay hydrated.','male')">🔊</button>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker sp-female">Sarah</span>
+        <span class="line-text">Look at that view! The mountains are stunning from here. How much longer until we reach the campsite?</span>
+        <button class="play-btn" onclick="speak('Look at that view! The mountains are stunning from here. How much longer until we reach the campsite?','female')">🔊</button>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker sp-male">Alex</span>
+        <span class="line-text">About two more hours. The path ahead is a bit rocky, so please watch your step. Keep a steady pace and we will be there before sunset.</span>
+        <button class="play-btn" onclick="speak('About two more hours. The path ahead is a bit rocky, so please watch your step. Keep a steady pace and we will be there before sunset.','male')">🔊</button>
+      </div>
     </div>
+  </div>
+  <div id="u2-qa" class="tab-pane"><div class="qa-grid" id="u2-qa-list"></div></div>
+  <div id="u2-shadow" class="tab-pane"><div class="shadow-list" id="u2-shadow-list"></div></div>
+  <div id="u2-vocab" class="tab-pane"><div class="vocab-grid" id="u2-vocab-grid"></div></div>
+</div>
 
-    <!-- Main Presentation Area -->
-    <div id="presentation-container">
-        <!-- Slides will be injected here by JS -->
+<!-- ═══ UNIT 3 ═══ -->
+<div class="unit-section" id="unit3">
+  <div class="unit-label">Unit 3</div>
+  <div class="unit-title">Reaching the Campsite — Reflecting & Planning</div>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('u3','dialogue',this)">💬 Monologue</button>
+    <button class="tab-btn" onclick="switchTab('u3','qa',this)">❓ Q&amp;A Drill</button>
+    <button class="tab-btn" onclick="switchTab('u3','shadow',this)">🎙️ Shadowing</button>
+    <button class="tab-btn" onclick="switchTab('u3','vocab',this)">📖 Vocabulary</button>
+  </div>
+  <div id="u3-dialogue" class="tab-pane active">
+    <button class="play-all" onclick="playConv(conv3)">▶ Play All</button>
+    <div class="dialogue">
+      <div class="dialogue-line">
+        <span class="speaker sp-female">Sarah</span>
+        <span class="line-text">We finally reached the campsite, and I feel amazing. The trek was challenging, especially the rocky sections — but the beautiful scenery made it worth it. I learned that good communication on the trail is very important. Alex was great at giving clear instructions and keeping everyone safe. I also realized that pacing myself is better than rushing. Now I am sitting by the campfire, drinking hot tea, and looking at the stars. This is a wonderful experience, and I cannot wait for tomorrow's hike!</span>
+        <button class="play-btn" onclick="speak('We finally reached the campsite, and I feel amazing. The trek was challenging, especially the rocky sections, but the beautiful scenery made it worth it. I learned that good communication on the trail is very important. Alex was great at giving clear instructions and keeping everyone safe. I also realized that pacing myself is better than rushing. Now I am sitting by the campfire, drinking hot tea, and looking at the stars. This is a wonderful experience, and I cannot wait for tomorrows hike!','female')">🔊</button>
+      </div>
     </div>
+  </div>
+  <div id="u3-qa" class="tab-pane"><div class="qa-grid" id="u3-qa-list"></div></div>
+  <div id="u3-shadow" class="tab-pane"><div class="shadow-list" id="u3-shadow-list"></div></div>
+  <div id="u3-vocab" class="tab-pane"><div class="vocab-grid" id="u3-vocab-grid"></div></div>
+</div>
 
-    <!-- Bottom Navigation -->
-    <div id="navigation" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-6 z-50 no-print bg-white px-6 py-3 rounded-full shadow-lg border border-gray-100">
-        <button onclick="prevSlide()" class="btn text-gray-500 hover:text-gray-800 p-2">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-        </button>
-        <span id="slide-counter" class="font-bold text-gray-600 text-lg">1 / 42</span>
-        <button onclick="nextSlide()" class="btn text-gray-500 hover:text-gray-800 p-2">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </button>
-    </div>
+<!-- ═══ PRACTICE ═══ -->
+<section class="practice-section" id="practice">
+  <div class="practice-inner">
+    <div class="unit-label" style="color:var(--green-300)">Final</div>
+    <div class="unit-title" style="color:#fff;margin-bottom:.5rem">🎯 Reflex Practice</div>
+    <p style="color:var(--green-100);font-size:.95rem">Answer these questions out loud without thinking too long!</p>
+    <div class="practice-grid" id="practice-list"></div>
+  </div>
+</section>
 
-    <script>
-        // --- SVG ASSETS (Pastel Flat Design) ---
-        const svgs = {
-            guide: `<svg viewBox="0 0 100 100" class="w-40 h-40 mx-auto drop-shadow-md"><circle cx="50" cy="50" r="45" fill="#E2F0CB"/><circle cx="50" cy="35" r="12" fill="#FFDAC1"/><path d="M35 80c0-15 10-25 15-25h0c5 0 15 10 15 25" fill="#B5EAD7"/><rect x="65" y="40" width="4" height="40" fill="#999"/><polygon points="69,45 85,50 69,55" fill="#FF9AA2"/></svg>`,
-            backpack: `<svg viewBox="0 0 100 100" class="w-40 h-40 mx-auto drop-shadow-md"><circle cx="50" cy="50" r="45" fill="#C7CEEA"/><path d="M35 30c0-10 30-10 30 0v50H35V30z" fill="#FFB7B2"/><rect x="40" y="45" width="20" height="25" rx="3" fill="#FFDAC1"/><path d="M35 40h-5v30h5M65 40h5v30h-5" fill="#B5EAD7"/></svg>`,
-            trail: `<svg viewBox="0 0 100 100" class="w-40 h-40 mx-auto drop-shadow-md"><circle cx="50" cy="50" r="45" fill="#E2F0CB"/><path d="M30 80 Q 50 60 40 40 T 60 15" fill="none" stroke="#FFDAC1" stroke-width="12" stroke-linecap="round"/><path d="M20 50l5-15l10 5zM70 70l5-20l15 10z" fill="#B5EAD7"/></svg>`,
-            steep: `<svg viewBox="0 0 100 100" class="w-40 h-40 mx-auto drop-shadow-md"><circle cx="50" cy="50" r="45" fill="#C7CEEA"/><polygon points="15,85 45,25 70,60 85,85" fill="#B5EAD7"/><polygon points="45,25 60,40 70,60 55,85 15,85" fill="#96DCC6"/></svg>`,
-            comfortable: `<svg viewBox="0 0 100 100" class="w-40 h-40 mx-auto drop-shadow-md"><circle cx="50" cy="50" r="45" fill="#FFDAC1"/><path d="M25 65 c0 -15 20 -20 30 -5 l20 5 v15 h-50 z" fill="#FFB7B2"/><rect x="35" y="55" width="25" height="4" fill="#fff" rx="2"/><circle cx="70" cy="55" r="4" fill="#C7CEEA"/></svg>`,
-            hydrated: `<svg viewBox="0 0 100 100" class="w-40 h-40 mx-auto drop-shadow-md"><circle cx="50" cy="50" r="45" fill="#B5EAD7"/><rect x="35" y="30" width="30" height="50" rx="5" fill="#C7CEEA"/><rect x="42" y="15" width="16" height="15" rx="3" fill="#FF9AA2"/><path d="M35 60 q 15 10 30 0 v 15 h -30 z" fill="#8cb2f4"/></svg>`,
-            campsite: `<svg viewBox="0 0 100 100" class="w-40 h-40 mx-auto drop-shadow-md"><circle cx="50" cy="50" r="45" fill="#C7CEEA"/><polygon points="50,25 20,70 80,70" fill="#FFDAC1"/><polygon points="50,25 50,70 80,70" fill="#E2F0CB"/><polygon points="45,75 50,65 55,75" fill="#FF9AA2"/><polygon points="40,80 50,70 60,80" fill="#FFB7B2"/></svg>`,
-            rocky: `<svg viewBox="0 0 100 100" class="w-40 h-40 mx-auto drop-shadow-md"><circle cx="50" cy="50" r="45" fill="#E2F0CB"/><polygon points="20,70 35,50 50,70" fill="#B5EAD7"/><polygon points="45,75 60,40 85,75" fill="#C7CEEA"/><polygon points="35,80 50,60 70,80" fill="#FFDAC1"/></svg>`,
-            scenery: `<svg viewBox="0 0 100 100" class="w-40 h-40 mx-auto drop-shadow-md"><circle cx="50" cy="50" r="45" fill="#FFDAC1"/><circle cx="50" cy="40" r="15" fill="#FF9AA2"/><polygon points="10,75 40,35 60,60 85,75" fill="#B5EAD7"/><polygon points="40,75 65,45 90,75" fill="#C7CEEA"/></svg>`,
-            instruction: `<svg viewBox="0 0 100 100" class="w-40 h-40 mx-auto drop-shadow-md"><circle cx="50" cy="50" r="45" fill="#C7CEEA"/><rect x="25" y="25" width="50" height="50" fill="#FFDAC1"/><line x1="35" y1="40" x2="65" y2="40" stroke="#FF9AA2" stroke-width="4" stroke-linecap="round"/><line x1="35" y1="50" x2="55" y2="50" stroke="#FF9AA2" stroke-width="4" stroke-linecap="round"/><line x1="35" y1="60" x2="60" y2="60" stroke="#B5EAD7" stroke-width="4" stroke-linecap="round"/></svg>`,
-            campfire: `<svg viewBox="0 0 100 100" class="w-40 h-40 mx-auto drop-shadow-md"><circle cx="50" cy="50" r="45" fill="#B5EAD7"/><path d="M50 20 Q 30 40 40 60 Q 50 40 60 60 Q 70 40 50 20" fill="#FF9AA2"/><path d="M50 35 Q 40 50 45 60 Q 50 45 55 60 Q 60 50 50 35" fill="#FFDAC1"/><rect x="35" y="70" width="30" height="8" rx="4" fill="#8c5b35" transform="rotate(10 50 74)"/><rect x="35" y="70" width="30" height="8" rx="4" fill="#a06e4a" transform="rotate(-10 50 74)"/></svg>`,
-            challenging: `<svg viewBox="0 0 100 100" class="w-40 h-40 mx-auto drop-shadow-md"><circle cx="50" cy="50" r="45" fill="#FFB7B2"/><polygon points="10,90 50,20 90,90" fill="#C7CEEA"/><polygon points="50,20 90,90 50,90" fill="#B5EAD7"/><circle cx="45" cy="45" r="5" fill="#FFDAC1"/><path d="M45 50 l-10 10 m10 -10 l10 15" stroke="#999" stroke-width="3" stroke-linecap="round"/></svg>`
-        };
+<!-- Settings -->
+<div class="settings-bar">
+  <div class="settings-panel" id="settings-panel">
+    <strong style="font-size:.9rem">🔊 AI Voice Settings</strong>
+    <label>Male Voice (Guide / Alex)</label>
+    <select id="voice-male"></select>
+    <label>Female Voice (Trekker / Sarah)</label>
+    <select id="voice-female"></select>
+    <p style="font-size:.75rem;color:var(--muted);margin-top:.75rem">★ Choose voices with "Natural" or "Online" for best quality (Edge/Chrome)</p>
+  </div>
+  <button class="settings-btn" onclick="toggleSettings()">⚙️</button>
+</div>
+<script>
+// ── DATA ──────────────────────────────────────────────
+const conv1=[
+  {t:"Hello everyone! Welcome to the mountain trail. My name is Alex, and I will be your guide today. Are you ready for the hike?",r:"male"},
+  {t:"Hi Alex! I am Sarah. Yes, I am very excited, but a little nervous. Is the trail very difficult?",r:"female"},
+  {t:"Nice to meet you, Sarah. Do not worry, the first part is easy, but it gets steeper later. Do you have enough water and snacks in your backpack?",r:"male"},
+  {t:"Yes, I have two bottles of water and some energy bars. Should I wear my jacket now?",r:"female"},
+  {t:"No, it is quite warm right now, keep it in your bag. We will take short breaks every thirty minutes. Lets start walking and enjoy the beautiful nature!",r:"male"}
+];
+const conv2=[
+  {t:"How is everyone doing? We are halfway to the top. Sarah, are your hiking boots comfortable?",r:"male"},
+  {t:"Yes, they are fine, thank you. But my backpack feels a bit heavy. Can we stop for a moment? I need to catch my breath.",r:"female"},
+  {t:"Of course. Lets take a five-minute break here by the river. Remember to drink plenty of water to stay hydrated.",r:"male"},
+  {t:"Look at that view! The mountains are stunning from here. How much longer until we reach the campsite?",r:"female"},
+  {t:"About two more hours. The path ahead is a bit rocky, so please watch your step. Keep a steady pace and we will be there before sunset.",r:"male"}
+];
+const conv3=[{t:"We finally reached the campsite, and I feel amazing. The trek was challenging, especially the rocky sections, but the beautiful scenery made it worth it. I learned that good communication on the trail is very important. Alex was great at giving clear instructions and keeping everyone safe. I also realized that pacing myself is better than rushing. Now I am sitting by the campfire, drinking hot tea, and looking at the stars. This is a wonderful experience, and I cannot wait for tomorrows hike!",r:"female"}];
 
-        // --- CONTENT DATA (42 Slides Structure) ---
-        const slidesData = [
-            // Slide 1
-            { html: `<h1 class="text-6xl font-extrabold text-teal-800 text-center mb-6">Communications in Trekking</h1>
-                     <h2 class="text-3xl text-gray-500 text-center">(Giao tiếp khi đi Trekking)</h2>` },
-            // Slide 2
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">Warm-up Questions</h2>
-                     <p class="text-gray-500 font-semibold mb-6 text-xl">(Level A2 - B1)</p>
-                     <ul class="text-2xl space-y-6 text-gray-700 font-medium">
-                         <li class="flex items-start"><span class="text-pastel-red mr-4 text-3xl">✦</span> Do you prefer hiking in the mountains or walking in the forest?</li>
-                         <li class="flex items-start"><span class="text-pastel-red mr-4 text-3xl">✦</span> What are three essential items you always put in your backpack?</li>
-                         <li class="flex items-start"><span class="text-pastel-red mr-4 text-3xl">✦</span> How do you usually communicate with your team when the trail gets difficult?</li>
-                     </ul>` },
-            // Slide 3
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-6 border-b-4 border-pastel-green pb-4 inline-block">Dictation 1 (Conversation)</h2>
-                     <p class="text-gray-500 mb-4 text-lg">Audio (Male & Female) - ~130 words (Level A2)</p>
-                     <button onclick="playConv1()" class="play-all-btn text-xl"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"></path></svg> Play All</button>
-                     <div class="space-y-4 text-2xl mt-4 leading-relaxed bg-teal-50 p-6 rounded-2xl border border-teal-100">
-                        <p><span class="font-bold text-blue-600">Alex (Guide):</span> Hello, everyone! Welcome to the mountain trail. My name is Alex, and I will be your guide today. Are you ready for the hike?</p>
-                        <p><span class="font-bold text-pink-600">Sarah (Trekker):</span> Hi Alex. I am Sarah. Yes, I am very excited, but a little nervous. Is the trail very difficult?</p>
-                        <p><span class="font-bold text-blue-600">Alex:</span> Nice to meet you, Sarah. Do not worry. The first part is easy, but it gets steeper later. Do you have enough water and snacks in your backpack?</p>
-                        <p><span class="font-bold text-pink-600">Sarah:</span> Yes, I have two bottles of water and some energy bars. Should I wear my jacket now?</p>
-                        <p><span class="font-bold text-blue-600">Alex:</span> No, it is quite warm right now. You can keep it in your bag. We will take short breaks every thirty minutes. Let's start walking and enjoy the beautiful nature!</p>
-                     </div>`},
-            // Slide 4
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">Yes/No Questions (Reflex)</h2>
-                     <p class="text-gray-500 font-semibold mb-6 text-xl">(Level A1 - B1)</p>
-                     <ol class="list-decimal list-inside text-3xl space-y-8 text-gray-700 font-medium">
-                         <li>Is Alex the guide for the hike today?</li>
-                         <li>Is Sarah completely relaxed about the trail?</li>
-                         <li>Does Sarah have enough water in her backpack?</li>
-                         <li>Will they take short breaks every hour?</li>
-                     </ol>`},
-            // Slide 5
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">Yes/No Answers & IPA</h2>
-                     <div class="space-y-8 text-2xl font-medium">
-                         <div class="flex items-start"><button onclick="speak('Yes, he is the guide.', 'male')" class="play-btn">▶</button>
-                            <div><p>1. Yes, he is the guide.</p><p class="ipa-text">/jes, hiː ɪz ðə ɡaɪd/</p></div>
-                         </div>
-                         <div class="flex items-start"><button onclick="speak('No, she is a little nervous.', 'female')" class="play-btn">▶</button>
-                            <div><p>2. No, she is a little nervous.</p><p class="ipa-text">/nəʊ, ʃiː ɪz ə ˈlɪtl ˈnɜːrvəs/</p></div>
-                         </div>
-                         <div class="flex items-start"><button onclick="speak('Yes, she has two bottles of water.', 'female')" class="play-btn">▶</button>
-                            <div><p>3. Yes, she has two bottles of water.</p><p class="ipa-text">/jes, ʃiː hæz tuː ˈbɑːtlz əv ˈwɔːtɜːr/</p></div>
-                         </div>
-                         <div class="flex items-start"><button onclick="speak('No, they will take breaks every thirty minutes.', 'male')" class="play-btn">▶</button>
-                            <div><p>4. No, they will take breaks every thirty minutes.</p><p class="ipa-text">/nəʊ, ðeɪ wɪl teɪk breɪks ˈevri ˈθɜːrti ˈmɪnɪts/</p></div>
-                         </div>
-                     </div>`},
-            // Slide 6
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">Wh- Questions (Reflex)</h2>
-                     <p class="text-gray-500 font-semibold mb-6 text-xl">(Level A1 - B1)</p>
-                     <ol class="list-decimal list-inside text-3xl space-y-8 text-gray-700 font-medium">
-                         <li>Who is the guide for the mountain trail?</li>
-                         <li>How does Sarah feel about the hike?</li>
-                         <li>What does Sarah have in her backpack?</li>
-                         <li>When will they take their short breaks?</li>
-                     </ol>`},
-            // Slide 7
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">Wh- Answers & IPA</h2>
-                     <div class="space-y-8 text-2xl font-medium">
-                         <div class="flex items-start"><button onclick="speak('Alex is the guide.', 'male')" class="play-btn">▶</button>
-                            <div><p>1. Alex is the guide.</p><p class="ipa-text">/ˈæleks ɪz ðə ɡaɪd/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('She is excited but a little nervous.', 'female')" class="play-btn">▶</button>
-                            <div><p>2. She is excited but a little nervous.</p><p class="ipa-text">/ʃiː ɪz ɪkˈsaɪtɪd bʌt ə ˈlɪtl ˈnɜːrvəs/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('She has water and energy bars.', 'female')" class="play-btn">▶</button>
-                            <div><p>3. She has water and energy bars.</p><p class="ipa-text">/ʃiː hæz ˈwɔːtɜːr ænd ˈenɜːrdʒi bɑːrz/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('They will take breaks every thirty minutes.', 'male')" class="play-btn">▶</button>
-                            <div><p>4. They will take breaks every thirty minutes.</p><p class="ipa-text">/ðeɪ wɪl teɪk breɪks ˈevri ˈθɜːrti ˈmɪnɪts/</p></div></div>
-                     </div>`},
-            
-            // Generate Pronunciation 8-11
-            genPronunSlide("Pronunciation & Shadowing (1/4)", [
-                { t: "Hello, everyone! Welcome to the mountain trail. My name is Alex, and I will be your guide today.", i: "/həˈləʊ, ˈevriwʌn! ˈwelkəm tə ðə ˈmaʊntn treɪl. maɪ neɪm ɪz /ˈæleks, ænd aɪ wɪl biː jʊr ɡaɪd təˈdeɪ/", r: "male" },
-                { t: "Are you ready for the hike?", i: "/ɑːr juː ˈredi fɔːr ðə haɪk/", r: "male" }
-            ]),
-            genPronunSlide("Pronunciation & Shadowing (2/4)", [
-                { t: "Hi Alex. I am Sarah. Yes, I am very excited, but a little nervous. Is the trail very difficult?", i: "/haɪ /ˈæleks. aɪ æm ˈserə. jes, aɪ æm ˈveri ɪkˈsaɪtɪd, bʌt ə ˈlɪtl ˈnɜːrvəs. ɪz ðə treɪl ˈveri ˈdɪfɪkəlt/", r: "female" },
-                { t: "Nice to meet you, Sarah. Do not worry. The first part is easy, but it gets steeper later.", i: "/naɪs tə miːt juː, ˈserə. duː nɑːt ˈwɜːri. ðə fɜːrst pɑːrt ɪz ˈiːzi, bʌt ɪt ɡets ˈstiːpɜːr ˈleɪtɜːr/", r: "male" }
-            ]),
-            genPronunSlide("Pronunciation & Shadowing (3/4)", [
-                { t: "Do you have enough water and snacks in your backpack?", i: "/duː juː hæv ɪˈnʌf ˈwɔːtɜːr ænd snæks ɪn jʊr ˈbækpæk/", r: "male" },
-                { t: "Yes, I have two bottles of water and some energy bars. Should I wear my jacket now?", i: "/jes, aɪ hæv tuː ˈbɑːtlz əv ˈwɔːtɜːr ænd sʌm ˈenɜːrdʒi bɑːrz. ʃʊd aɪ wer maɪ ˈdʒækɪt naʊ/", r: "female" }
-            ]),
-            genPronunSlide("Pronunciation & Shadowing (4/4)", [
-                { t: "No, it is quite warm right now. You can keep it in your bag.", i: "/nəʊ, ɪt ɪz kwaɪt wɔːrm raɪt naʊ. juː kæn kiːp ɪt ɪn jʊr bæɡ/", r: "male" },
-                { t: "We will take short breaks every thirty minutes. Let's start walking and enjoy the beautiful nature!", i: "/wiː wɪl teɪk ʃɔːrt breɪks ˈevri ˈθɜːrti ˈmɪnɪts. lets stɑːrt ˈwɔːkɪŋ ænd ɪnˈdʒɔɪ ðə ˈbjuːtɪfl ˈneɪtʃɜːr/", r: "male" }
-            ]),
+const u1QA=[
+  {q:"Is Alex the guide for the hike today?",a:"Yes, he is the guide.",i:"/jes, hiː ɪz ðə ɡaɪd/"},
+  {q:"Is Sarah completely relaxed about the trail?",a:"No, she is a little nervous.",i:"/nəʊ, ʃiː ɪz ə ˈlɪtl ˈnɜːrvəs/"},
+  {q:"Does Sarah have enough water?",a:"Yes, she has two bottles of water.",i:"/jes, ʃiː hæz tuː ˈbɑːtlz əv ˈwɔːtɜːr/"},
+  {q:"Will they take breaks every hour?",a:"No, they will take breaks every thirty minutes.",i:"/nəʊ, ðeɪ wɪl teɪk breɪks ˈevri ˈθɜːrti ˈmɪnɪts/"},
+  {q:"Who is the guide for the mountain trail?",a:"Alex is the guide.",i:"/ˈæleks ɪz ðə ɡaɪd/"},
+  {q:"How does Sarah feel about the hike?",a:"She is excited but a little nervous.",i:"/ʃiː ɪz ɪkˈsaɪtɪd bʌt ə ˈlɪtl ˈnɜːrvəs/"},
+  {q:"What does Sarah have in her backpack?",a:"She has water and energy bars.",i:"/ʃiː hæz ˈwɔːtɜːr ænd ˈenɜːrdʒi bɑːrz/"},
+  {q:"When will they take their breaks?",a:"They will take breaks every thirty minutes.",i:"/ðeɪ wɪl teɪk breɪks ˈevri ˈθɜːrti ˈmɪnɪts/"}
+];
+const u2QA=[
+  {q:"Are Sarah's hiking boots comfortable?",a:"Yes, they are comfortable.",i:"/jes, ðeɪ ɑːr ˈkʌmftɜːrbl/"},
+  {q:"Does Sarah's backpack feel light?",a:"No, her backpack feels heavy.",i:"/nəʊ, hɜːr ˈbækpæk fiːlz ˈhevi/"},
+  {q:"Will they take a break by the river?",a:"Yes, they will stop by the river.",i:"/jes, ðeɪ wɪl stɑːp baɪ ðə ˈrɪvɜːr/"},
+  {q:"Will they reach the campsite in one hour?",a:"No, it will take about two more hours.",i:"/nəʊ, ɪt wɪl teɪk əˈbaʊt tuː mɔːr ˈaʊɜːrz/"},
+  {q:"Where are they currently standing?",a:"They are halfway to the top.",i:"/ðeɪ ɑːr ˈhæfweɪ tə ðə tɑːp/"},
+  {q:"Why does Sarah want to stop?",a:"She needs to catch her breath.",i:"/ʃiː niːdz tə kætʃ hɜːr breθ/"},
+  {q:"What does Alex tell them to do to stay hydrated?",a:"He tells them to drink plenty of water.",i:"/hiː telz ðəm tə drɪŋk ˈplenti əv ˈwɔːtɜːr/"},
+  {q:"How is the path ahead?",a:"The path ahead is a bit rocky.",i:"/ðə pæθ əˈhed ɪz ə bɪt ˈrɑːki/"}
+];
+const u3QA=[
+  {q:"Did they finally reach the campsite?",a:"Yes, they reached the campsite.",i:"/jes, ðeɪ riːtʃt ðə ˈkæmpsaɪt/"},
+  {q:"Does Sarah feel terrible?",a:"No, she feels amazing.",i:"/nəʊ, ʃiː fiːlz əˈmeɪzɪŋ/"},
+  {q:"Was Alex good at giving clear instructions?",a:"Yes, he was great at giving instructions.",i:"/jes, hiː wəz ɡreɪt æt ˈɡɪvɪŋ ɪnˈstrʌkʃnz/"},
+  {q:"Is Sarah drinking cold water by the campfire?",a:"No, she is drinking hot tea.",i:"/nəʊ, ʃiː ɪz ˈdrɪŋkɪŋ hɑːt tiː/"},
+  {q:"How does Sarah describe the trek?",a:"She describes it as challenging.",i:"/ʃiː dɪˈskraɪbz ɪt æz ˈtʃælɪndʒɪŋ/"},
+  {q:"What made the trek worth it?",a:"The beautiful scenery made it worth it.",i:"/ðə ˈbjuːtɪfl ˈsiːnɜːri meɪd ɪt wɜːrθ ɪt/"},
+  {q:"What did Sarah learn about walking?",a:"She learned that pacing herself is better than rushing.",i:"/ʃiː lɜːrnd ðæt ˈpeɪsɪŋ hɜːrˈself ɪz ˈbetɜːr ðæn ˈrʌʃɪŋ/"},
+  {q:"What is Sarah looking at?",a:"She is looking at the stars.",i:"/ʃiː ɪz ˈlʊkɪŋ æt ðə stɑːrz/"}
+];
 
-            // Vocab 12-15
-            genVocabSlide([
-                { w: "Guide", i: "/ˈɡaɪd/", svg: 'guide', type: 'word', ex: [
-                    { t: "He is a guide.", i: "/hiː ɪz ə ɡaɪd/", l: "A1" },
-                    { t: "Our guide knows the mountain well.", i: "/aʊɜːr ɡaɪd nəʊz ðə ˈmaʊntn wel/", l: "A2" },
-                    { t: "You should always listen to your guide during the trek.", i: "/juː ʃʊd ˈɔːlweɪz ˈlɪsn tə jʊr ɡaɪd ˈdʊrɪŋ ðə trek/", l: "B1" }
-                ]},
-                { w: "Be ready for", i: "/biː ˈredi fɔːr/", svg: 'guide', type: 'chunk', ex: [
-                    { t: "I am ready.", i: "/aɪ æm ˈredi/", l: "A1" },
-                    { t: "We are ready for the trip.", i: "/wiː ɑːr ˈredi fɔːr ðə trɪp/", l: "A2" },
-                    { t: "Make sure you are ready for the steep climb ahead.", i: "/meɪk ʃʊr juː ɑːr ˈredi fɔːr ðə stiːp klaɪm əˈhed/", l: "B1" }
-                ]}
-            ]),
-            genVocabSlide([
-                { w: "Backpack", i: "/ˈbækpæk/", svg: 'backpack', type: 'word', ex: [
-                    { t: "My backpack is heavy.", i: "/maɪ ˈbækpæk ɪz ˈhevi/", l: "A1" },
-                    { t: "Put the water in your backpack.", i: "/pʊt ðə ˈwɔːtɜːr ɪn jʊr ˈbækpæk/", l: "A2" },
-                    { t: "A good backpack is essential for carrying your hiking gear.", i: "/ə ɡʊd ˈbækpæk ɪz ɪˈsenʃl fɔːr ˈkæriɪŋ jʊr ˈhaɪkɪŋ ɡɪr/", l: "B1" }
-                ]},
-                { w: "Take short breaks", i: "/teɪk ʃɔːrt breɪks/", svg: 'backpack', type: 'chunk', ex: [
-                    { t: "We take a break.", i: "/wiː teɪk ə breɪk/", l: "A1" },
-                    { t: "We should take short breaks often.", i: "/wiː ʃʊd teɪk ʃɔːrt breɪks ˈɔːfn/", l: "A2" },
-                    { t: "It is important to take short breaks to keep your energy up.", i: "/ɪt ɪz ɪmˈpɔːrtnt tə teɪk ʃɔːrt breɪks tə kiːp jʊr ˈenɜːrdʒi ʌp/", l: "B1" }
-                ]}
-            ]),
-            genVocabSlide([
-                { w: "Trail", i: "/treɪl/", svg: 'trail', type: 'word', ex: [
-                    { t: "The trail is long.", i: "/ðə treɪl ɪz lɔːŋ/", l: "A1" },
-                    { t: "Stay on the trail to be safe.", i: "/steɪ ɑːn ðə treɪl tə biː seɪf/", l: "A2" },
-                    { t: "This mountain trail requires good physical condition to complete.", i: "/ðɪs ˈmaʊntn treɪl rɪˈkwaɪɜːrz ɡʊd ˈfɪzɪkl kənˈdɪʃn tə kəmˈpliːt/", l: "B1" }
-                ]},
-                { w: "Have enough water", i: "/hæv ɪˈnʌf ˈwɔːtɜːr/", svg: 'trail', type: 'chunk', ex: [
-                    { t: "I have water.", i: "/aɪ hæv ˈwɔːtɜːr/", l: "A1" },
-                    { t: "Do you have enough water today?", i: "/duː juː hæv ɪˈnʌf ˈwɔːtɜːr təˈdeɪ/", l: "A2" },
-                    { t: "We must have enough water because the weather is extremely hot.", i: "/wiː mʌst hæv ɪˈnʌf ˈwɔːtɜːr bɪˈkɔːz ðə ˈweðɜːr ɪz ɪkˈstriːmli hɑːt/", l: "B1" }
-                ]}
-            ]),
-            genVocabSlide([
-                { w: "Steep", i: "/stiːp/", svg: 'steep', type: 'word', ex: [
-                    { t: "It is steep.", i: "/ɪt ɪz stiːp/", l: "A1" },
-                    { t: "The hill is very steep here.", i: "/ðə hɪl ɪz ˈveri stiːp hɪr/", l: "A2" },
-                    { t: "Use your trekking poles when walking down the steep sections.", i: "/juːz jʊr ˈtrekɪŋ pəʊlz wen ˈwɔːkɪŋ daʊn ðə stiːp ˈsekʃnz/", l: "B1" }
-                ]},
-                { w: "Enjoy the nature", i: "/ɪnˈdʒɔɪ ðə ˈneɪtʃɜːr/", svg: 'steep', type: 'chunk', ex: [
-                    { t: "I enjoy nature.", i: "/aɪ ɪnˈdʒɔɪ ˈneɪtʃɜːr/", l: "A1" },
-                    { t: "Walk slowly and enjoy the nature.", i: "/wɔːk ˈsləʊli ænd ɪnˈdʒɔɪ ðə ˈneɪtʃɜːr/", l: "A2" },
-                    { t: "Trekking is the best way to disconnect from work and enjoy the nature.", i: "/ˈtrekɪŋ ɪz ðə best weɪ tə ˌdɪskəˈnekt frəm wɜːrk ænd ɪnˈdʒɔɪ ðə ˈneɪtʃɜːr/", l: "B1" }
-                ]}
-            ]),
+const u1Shadow=[
+  {t:"Hello everyone! Welcome to the mountain trail. My name is Alex, and I will be your guide today.",i:"/həˈləʊ ˈevriwʌn! ˈwelkəm tə ðə ˈmaʊntn treɪl/",r:"male"},
+  {t:"Are you ready for the hike?",i:"/ɑːr juː ˈredi fɔːr ðə haɪk/",r:"male"},
+  {t:"Yes, I am very excited, but a little nervous. Is the trail very difficult?",i:"/jes, aɪ æm ˈveri ɪkˈsaɪtɪd, bʌt ə ˈlɪtl ˈnɜːrvəs/",r:"female"},
+  {t:"Do not worry. The first part is easy, but it gets steeper later.",i:"/duː nɑːt ˈwɜːri. ðə fɜːrst pɑːrt ɪz ˈiːzi, bʌt ɪt ɡets ˈstiːpɜːr ˈleɪtɜːr/",r:"male"},
+  {t:"Do you have enough water and snacks in your backpack?",i:"/duː juː hæv ɪˈnʌf ˈwɔːtɜːr ænd snæks ɪn jʊr ˈbækpæk/",r:"male"},
+  {t:"We will take short breaks every thirty minutes. Let's start walking and enjoy the beautiful nature!",i:"/wiː wɪl teɪk ʃɔːrt breɪks ˈevri ˈθɜːrti ˈmɪnɪts/",r:"male"}
+];
+const u2Shadow=[
+  {t:"How is everyone doing? We are halfway to the top.",i:"/haʊ ɪz ˈevriwʌn ˈduːɪŋ? wiː ɑːr ˈhæfweɪ tə ðə tɑːp/",r:"male"},
+  {t:"My backpack feels a bit heavy. Can we stop for a moment? I need to catch my breath.",i:"/maɪ ˈbækpæk fiːlz ə bɪt ˈhevi. kæn wiː stɑːp fɔːr ə ˈməʊmənt/",r:"female"},
+  {t:"Let's take a five-minute break here by the river. Remember to drink plenty of water to stay hydrated.",i:"/lets teɪk ə faɪv ˈmɪnɪt breɪk hɪr baɪ ðə ˈrɪvɜːr/",r:"male"},
+  {t:"Look at that view! The mountains are stunning from here.",i:"/lʊk æt ðæt vjuː! ðə ˈmaʊntnz ɑːr ˈstʌnɪŋ frəm hɪr/",r:"female"},
+  {t:"The path ahead is a bit rocky, so please watch your step. Keep a steady pace.",i:"/ðə pæθ əˈhed ɪz ə bɪt ˈrɑːki, səʊ pliːz wɑːtʃ jʊr step/",r:"male"}
+];
+const u3Shadow=[
+  {t:"We finally reached the campsite, and I feel amazing.",i:"/wiː ˈfaɪnəli riːtʃt ðə ˈkæmpsaɪt, ænd aɪ fiːl əˈmeɪzɪŋ/",r:"female"},
+  {t:"The trek was challenging, especially the rocky sections.",i:"/ðə trek wəz ˈtʃælɪndʒɪŋ, ɪˈspeʃəli ðə ˈrɑːki ˈsekʃnz/",r:"female"},
+  {t:"But the beautiful scenery made it worth it.",i:"/bʌt ðə ˈbjuːtɪfl ˈsiːnɜːri meɪd ɪt wɜːrθ ɪt/",r:"female"},
+  {t:"I learned that good communication on the trail is very important.",i:"/aɪ lɜːrnd ðæt ɡʊd kəˌmjuːnɪˈkeɪʃn ɑːn ðə treɪl ɪz ˈveri ɪmˈpɔːrtnt/",r:"female"},
+  {t:"I also realized that pacing myself is better than rushing.",i:"/aɪ ˈɔːlsəʊ ˈriːəlaɪzd ðæt ˈpeɪsɪŋ maɪˈself ɪz ˈbetɜːr ðæn ˈrʌʃɪŋ/",r:"female"},
+  {t:"This is a wonderful experience, and I cannot wait for tomorrow's hike!",i:"/ðɪs ɪz ə ˈwʌndɜːrfl ɪkˈspɪriəns/",r:"female"}
+];
 
-            // Slide 16
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-6 border-b-4 border-pastel-green pb-4 inline-block">Dictation 2 (Extended Conversation)</h2>
-                     <p class="text-gray-500 mb-4 text-lg">Audio (Male & Female) - ~120 words (Level A2-B1)</p>
-                     <button onclick="playConv2()" class="play-all-btn text-xl"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"></path></svg> Play All</button>
-                     <div class="space-y-4 text-2xl mt-4 leading-relaxed bg-teal-50 p-6 rounded-2xl border border-teal-100">
-                        <p><span class="font-bold text-blue-600">Alex:</span> How is everyone doing? We are halfway to the top. Sarah, are your hiking boots comfortable?</p>
-                        <p><span class="font-bold text-pink-600">Sarah:</span> Yes, they are fine, thank you. But my backpack feels a bit heavy. Can we stop for a moment? I need to catch my breath.</p>
-                        <p><span class="font-bold text-blue-600">Alex:</span> Of course. Let's take a five-minute break here by the river. Remember to drink plenty of water to stay hydrated.</p>
-                        <p><span class="font-bold text-pink-600">Sarah:</span> Look at that view! The mountains are stunning from here. How much longer until we reach the campsite?</p>
-                        <p><span class="font-bold text-blue-600">Alex:</span> It will take about two more hours. The path ahead is a bit rocky, so please watch your step. Keep a steady pace, and we will be there before sunset.</p>
-                     </div>`},
-            // Slide 17
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">Yes/No Questions (Reflex)</h2>
-                     <p class="text-gray-500 font-semibold mb-6 text-xl">(Level A1 - B1)</p>
-                     <ol class="list-decimal list-inside text-3xl space-y-8 text-gray-700 font-medium">
-                         <li>Are Sarah's hiking boots comfortable?</li>
-                         <li>Does Sarah's backpack feel light?</li>
-                         <li>Will they take a break by the river?</li>
-                         <li>Are they going to reach the campsite in one hour?</li>
-                     </ol>`},
-            // Slide 18
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">Yes/No Answers & IPA</h2>
-                     <div class="space-y-8 text-2xl font-medium">
-                         <div class="flex items-start"><button onclick="speak('Yes, they are comfortable.', 'female')" class="play-btn">▶</button>
-                            <div><p>1. Yes, they are comfortable.</p><p class="ipa-text">/jes, ðeɪ ɑːr ˈkʌmftɜːrbl/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('No, her backpack feels heavy.', 'female')" class="play-btn">▶</button>
-                            <div><p>2. No, her backpack feels heavy.</p><p class="ipa-text">/nəʊ, hɜːr ˈbækpæk fiːlz ˈhevi/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('Yes, they will stop by the river.', 'male')" class="play-btn">▶</button>
-                            <div><p>3. Yes, they will stop by the river.</p><p class="ipa-text">/jes, ðeɪ wɪl stɑːp baɪ ðə ˈrɪvɜːr/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('No, it will take about two more hours.', 'male')" class="play-btn">▶</button>
-                            <div><p>4. No, it will take about two more hours.</p><p class="ipa-text">/nəʊ, ɪt wɪl teɪk əˈbaʊt tuː mɔːr ˈaʊɜːrz/</p></div></div>
-                     </div>`},
-            // Slide 19
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">Wh- Questions (Reflex)</h2>
-                     <p class="text-gray-500 font-semibold mb-6 text-xl">(Level A1 - B1)</p>
-                     <ol class="list-decimal list-inside text-3xl space-y-8 text-gray-700 font-medium">
-                         <li>Where are they currently standing?</li>
-                         <li>Why does Sarah want to stop for a moment?</li>
-                         <li>What does Alex tell them to do to stay hydrated?</li>
-                         <li>How is the path ahead of them?</li>
-                     </ol>`},
-            // Slide 20
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">Wh- Answers & IPA</h2>
-                     <div class="space-y-8 text-2xl font-medium">
-                         <div class="flex items-start"><button onclick="speak('They are halfway to the top.', 'male')" class="play-btn">▶</button>
-                            <div><p>1. They are halfway to the top.</p><p class="ipa-text">/ðeɪ ɑːr ˈhæfweɪ tə ðə tɑːp/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('She needs to catch her breath.', 'female')" class="play-btn">▶</button>
-                            <div><p>2. She needs to catch her breath.</p><p class="ipa-text">/ʃiː niːdz tə kætʃ hɜːr breθ/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('He tells them to drink plenty of water.', 'male')" class="play-btn">▶</button>
-                            <div><p>3. He tells them to drink plenty of water.</p><p class="ipa-text">/hiː telz ðəm tə drɪŋk ˈplenti əv ˈwɔːtɜːr/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('The path ahead is a bit rocky.', 'male')" class="play-btn">▶</button>
-                            <div><p>4. The path ahead is a bit rocky.</p><p class="ipa-text">/ðə pæθ əˈhed ɪz ə bɪt ˈrɑːki/</p></div></div>
-                     </div>`},
-                     
-            // Generate Pronunciation 21-24
-            genPronunSlide("Pronunciation & Shadowing (5/8)", [
-                { t: "How is everyone doing? We are halfway to the top.", i: "/haʊ ɪz ˈevriwʌn ˈduːɪŋ? wiː ɑːr ˈhæfweɪ tə ðə tɑːp/", r: "male" },
-                { t: "Sarah, are your hiking boots comfortable?", i: "/ˈserə, ɑːr jʊr ˈhaɪkɪŋ buːts ˈkʌmftɜːrbl/", r: "male" }
-            ]),
-            genPronunSlide("Pronunciation & Shadowing (6/8)", [
-                { t: "Yes, they are fine, thank you. But my backpack feels a bit heavy.", i: "/jes, ðeɪ ɑːr faɪn, θæŋk juː. bʌt maɪ ˈbækpæk fiːlz ə bɪt ˈhevi/", r: "female" },
-                { t: "Can we stop for a moment? I need to catch my breath.", i: "/kæn wiː stɑːp fɔːr ə ˈməʊmənt? aɪ niːd tə kætʃ maɪ breθ/", r: "female" }
-            ]),
-            genPronunSlide("Pronunciation & Shadowing (7/8)", [
-                { t: "Of course. Let's take a five-minute break here by the river.", i: "/əv kɔːrs. lets teɪk ə faɪv ˈmɪnɪt breɪk hɪr baɪ ðə ˈrɪvɜːr/", r: "male" },
-                { t: "Remember to drink plenty of water to stay hydrated.", i: "/rɪˈmembɜːr tə drɪŋk ˈplenti əv ˈwɔːtɜːr tə steɪ ˈhaɪdreɪtɪd/", r: "male" },
-                { t: "Look at that view! The mountains are stunning from here.", i: "/lʊk æt ðæt vjuː! ðə ˈmaʊntnz ɑːr ˈstʌnɪŋ frəm hɪr/", r: "female" }
-            ]),
-            genPronunSlide("Pronunciation & Shadowing (8/8)", [
-                { t: "How much longer until we reach the campsite?", i: "/haʊ mʌtʃ ˈlɔːŋɡɜːr ənˈtɪl wiː riːtʃ ðə ˈkæmpsaɪt/", r: "female" },
-                { t: "It will take about two more hours. The path ahead is a bit rocky, so please watch your step.", i: "/ɪt wɪl teɪk əˈbaʊt tuː mɔːr ˈaʊɜːrz. ðə pæθ əˈhed ɪz ə bɪt ˈrɑːki, səʊ pliːz wɑːtʃ jʊr step/", r: "male" },
-                { t: "Keep a steady pace, and we will be there before sunset.", i: "/kiːp ə ˈstedi peɪs, ænd wiː wɪl biː ðer bɪˈfɔːr ˈsʌnset/", r: "male" }
-            ]),
+const u1Vocab=[
+  {w:"Guide",i:"/ɡaɪd/",type:"word",ex:[{t:"He is a guide.",l:"A1"},{t:"Our guide knows the mountain well.",l:"A2"},{t:"You should always listen to your guide during the trek.",l:"B1"}]},
+  {w:"Be ready for",i:"/biː ˈredi fɔːr/",type:"chunk",ex:[{t:"I am ready.",l:"A1"},{t:"We are ready for the trip.",l:"A2"},{t:"Make sure you are ready for the steep climb ahead.",l:"B1"}]},
+  {w:"Backpack",i:"/ˈbækpæk/",type:"word",ex:[{t:"My backpack is heavy.",l:"A1"},{t:"Put the water in your backpack.",l:"A2"},{t:"A good backpack is essential for carrying your hiking gear.",l:"B1"}]},
+  {w:"Take short breaks",i:"/teɪk ʃɔːrt breɪks/",type:"chunk",ex:[{t:"We take a break.",l:"A1"},{t:"We should take short breaks often.",l:"A2"},{t:"It is important to take short breaks to keep your energy up.",l:"B1"}]},
+  {w:"Trail",i:"/treɪl/",type:"word",ex:[{t:"The trail is long.",l:"A1"},{t:"Stay on the trail to be safe.",l:"A2"},{t:"This mountain trail requires good physical condition to complete.",l:"B1"}]},
+  {w:"Steep",i:"/stiːp/",type:"word",ex:[{t:"It is steep.",l:"A1"},{t:"The hill is very steep here.",l:"A2"},{t:"Use your trekking poles when walking down the steep sections.",l:"B1"}]},
+  {w:"Have enough water",i:"/hæv ɪˈnʌf ˈwɔːtɜːr/",type:"chunk",ex:[{t:"I have water.",l:"A1"},{t:"Do you have enough water today?",l:"A2"},{t:"We must have enough water because the weather is extremely hot.",l:"B1"}]},
+  {w:"Enjoy the nature",i:"/ɪnˈdʒɔɪ ðə ˈneɪtʃɜːr/",type:"chunk",ex:[{t:"I enjoy nature.",l:"A1"},{t:"Walk slowly and enjoy the nature.",l:"A2"},{t:"Trekking is the best way to disconnect from work and enjoy the nature.",l:"B1"}]}
+];
+const u2Vocab=[
+  {w:"Comfortable",i:"/ˈkʌmftɜːrbl/",type:"word",ex:[{t:"My shoes are comfortable.",l:"A1"},{t:"Are you comfortable right now?",l:"A2"},{t:"Investing in comfortable hiking boots is highly recommended.",l:"B1"}]},
+  {w:"Catch my breath",i:"/kætʃ maɪ breθ/",type:"chunk",ex:[{t:"I stop to catch my breath.",l:"A1"},{t:"Please wait, I need to catch my breath.",l:"A2"},{t:"After running up the hill, it took me a few minutes to catch my breath.",l:"B1"}]},
+  {w:"Hydrated",i:"/ˈhaɪdreɪtɪd/",type:"word",ex:[{t:"I am hydrated.",l:"A1"},{t:"Drink water to stay hydrated.",l:"A2"},{t:"Staying hydrated prevents muscle cramps during intense trekking.",l:"B1"}]},
+  {w:"Watch your step",i:"/wɑːtʃ jʊr step/",type:"chunk",ex:[{t:"Watch your step here.",l:"A1"},{t:"The ground is wet, so watch your step.",l:"A2"},{t:"You need to watch your step carefully because the rocks are very slippery.",l:"B1"}]},
+  {w:"Campsite",i:"/ˈkæmpsaɪt/",type:"word",ex:[{t:"This is the campsite.",l:"A1"},{t:"We sleep at the campsite tonight.",l:"A2"},{t:"We need to reach the campsite before it gets completely dark.",l:"B1"}]},
+  {w:"Keep a steady pace",i:"/kiːp ə ˈstedi peɪs/",type:"chunk",ex:[{t:"We walk at a steady pace.",l:"A1"},{t:"Try to keep a steady pace on the mountain.",l:"A2"},{t:"If we keep a steady pace, we will not feel exhausted too quickly.",l:"B1"}]},
+  {w:"Rocky",i:"/ˈrɑːki/",type:"word",ex:[{t:"The road is rocky.",l:"A1"},{t:"It is hard to walk on rocky trails.",l:"A2"},{t:"This rocky terrain requires a lot of concentration and balance.",l:"B1"}]},
+  {w:"Reach the top",i:"/riːtʃ ðə tɑːp/",type:"chunk",ex:[{t:"We reach the top.",l:"A1"},{t:"We will reach the top soon.",l:"A2"},{t:"It is a fantastic feeling when you finally reach the top of the mountain.",l:"B1"}]}
+];
+const u3Vocab=[
+  {w:"Scenery",i:"/ˈsiːnɜːri/",type:"word",ex:[{t:"The scenery is nice.",l:"A1"},{t:"I love the mountain scenery.",l:"A2"},{t:"Taking photos of the natural scenery is my favorite hobby.",l:"B1"}]},
+  {w:"Feel amazing",i:"/fiːl əˈmeɪzɪŋ/",type:"chunk",ex:[{t:"I feel amazing today.",l:"A1"},{t:"You will feel amazing after the walk.",l:"A2"},{t:"Even though my legs hurt, I still feel amazing about this achievement.",l:"B1"}]},
+  {w:"Instruction",i:"/ɪnˈstrʌkʃn/",type:"word",ex:[{t:"Listen to the instruction.",l:"A1"},{t:"His instructions are clear.",l:"A2"},{t:"You must follow the safety instructions to avoid accidents on the trail.",l:"B1"}]},
+  {w:"Pace myself",i:"/peɪs maɪˈself/",type:"chunk",ex:[{t:"I pace myself.",l:"A1"},{t:"I try to pace myself on the steep hills.",l:"A2"},{t:"It is crucial to pace myself so I do not run out of energy too soon.",l:"B1"}]},
+  {w:"Campfire",i:"/ˈkæmpfaɪɜːr/",type:"word",ex:[{t:"The campfire is hot.",l:"A1"},{t:"We sit around the campfire.",l:"A2"},{t:"Sharing stories by the campfire is the best part of camping.",l:"B1"}]},
+  {w:"Make it worth it",i:"/meɪk ɪt wɜːrθ ɪt/",type:"chunk",ex:[{t:"The view makes it worth it.",l:"A1"},{t:"Good food makes the effort worth it.",l:"A2"},{t:"Reaching the summit definitely makes all the hard work worth it.",l:"B1"}]},
+  {w:"Challenging",i:"/ˈtʃælɪndʒɪŋ/",type:"word",ex:[{t:"The hike is challenging.",l:"A1"},{t:"This path is very challenging today.",l:"A2"},{t:"Overcoming a challenging trail gives you a lot of confidence.",l:"B1"}]},
+  {w:"Cannot wait for",i:"/ˈkænɑːt weɪt fɔːr/",type:"chunk",ex:[{t:"I cannot wait for tomorrow.",l:"A1"},{t:"I cannot wait for the next trip.",l:"A2"},{t:"I had such a great time that I cannot wait for our next trekking adventure.",l:"B1"}]}
+];
 
-            // Vocab 25-28
-            genVocabSlide([
-                { w: "Comfortable", i: "/ˈkʌmftɜːrbl/", svg: 'comfortable', type: 'word', ex: [
-                    { t: "My shoes are comfortable.", i: "/maɪ ʃuːz ɑːr ˈkʌmftɜːrbl/", l: "A1" },
-                    { t: "Are you comfortable right now?", i: "/ɑːr juː ˈkʌmftɜːrbl raɪt naʊ/", l: "A2" },
-                    { t: "Investing in comfortable hiking boots is highly recommended.", i: "/ɪnˈvestɪŋ ɪn ˈkʌmftɜːrbl ˈhaɪkɪŋ buːts ɪz ˈhaɪli ˌrekəˈmendɪd/", l: "B1" }
-                ]},
-                { w: "Catch my breath", i: "/kætʃ maɪ breθ/", svg: 'comfortable', type: 'chunk', ex: [
-                    { t: "I stop to catch my breath.", i: "/aɪ stɑːp tə kætʃ maɪ breθ/", l: "A1" },
-                    { t: "Please wait, I need to catch my breath.", i: "/pliːz weɪt, aɪ niːd tə kætʃ maɪ breθ/", l: "A2" },
-                    { t: "After running up the hill, it took me a few minutes to catch my breath.", i: "/ˈæftɜːr ˈrʌnɪŋ ʌp ðə hɪl, ɪt tʊk miː ə fjuː ˈmɪnɪts tə kætʃ maɪ breθ/", l: "B1" }
-                ]}
-            ]),
-            genVocabSlide([
-                { w: "Hydrated", i: "/ˈhaɪdreɪtɪd/", svg: 'hydrated', type: 'word', ex: [
-                    { t: "I am hydrated.", i: "/aɪ æm ˈhaɪdreɪtɪd/", l: "A1" },
-                    { t: "Drink water to stay hydrated.", i: "/drɪŋk ˈwɔːtɜːr tə steɪ ˈhaɪdreɪtɪd/", l: "A2" },
-                    { t: "Staying hydrated prevents muscle cramps during intense trekking.", i: "/ˈsteɪɪŋ ˈhaɪdreɪtɪd prɪˈvents ˈmʌsl kræmps ˈdʊrɪŋ ɪnˈtens ˈtrekɪŋ/", l: "B1" }
-                ]},
-                { w: "Watch your step", i: "/wɑːtʃ jʊr step/", svg: 'hydrated', type: 'chunk', ex: [
-                    { t: "Watch your step here.", i: "/wɑːtʃ jʊr step hɪr/", l: "A1" },
-                    { t: "The ground is wet, so watch your step.", i: "/ðə ɡraʊnd ɪz wet, səʊ wɑːtʃ jʊr step/", l: "A2" },
-                    { t: "You need to watch your step carefully because the rocks are very slippery.", i: "/juː niːd tə wɑːtʃ jʊr step ˈkerfəli bɪˈkɔːz ðə rɑːks ɑːr ˈveri ˈslɪpɜːri/", l: "B1" }
-                ]}
-            ]),
-            genVocabSlide([
-                { w: "Campsite", i: "/ˈkæmpsaɪt/", svg: 'campsite', type: 'word', ex: [
-                    { t: "This is the campsite.", i: "/ðɪs ɪz ðə ˈkæmpsaɪt/", l: "A1" },
-                    { t: "We sleep at the campsite tonight.", i: "/wiː sliːp æt ðə ˈkæmpsaɪt təˈnaɪt/", l: "A2" },
-                    { t: "We need to reach the campsite before it gets completely dark.", i: "/wiː niːd tə riːtʃ ðə ˈkæmpsaɪt bɪˈfɔːr ɪt ɡets kəmˈpliːtli dɑːrk/", l: "B1" }
-                ]},
-                { w: "Keep a steady pace", i: "/kiːp ə ˈstedi peɪs/", svg: 'campsite', type: 'chunk', ex: [
-                    { t: "We walk at a steady pace.", i: "/wiː wɔːk æt ə ˈstedi peɪs/", l: "A1" },
-                    { t: "Try to keep a steady pace on the mountain.", i: "/traɪ tə kiːp ə ˈstedi peɪs ɑːn ðə ˈmaʊntn/", l: "A2" },
-                    { t: "If we keep a steady pace, we will not feel exhausted too quickly.", i: "/ɪf wiː kiːp ə ˈstedi peɪs, wiː wɪl nɑːt fiːl ɪɡˈzɔːstɪd tuː ˈkwɪkli/", l: "B1" }
-                ]}
-            ]),
-            genVocabSlide([
-                { w: "Rocky", i: "/ˈrɑːki/", svg: 'rocky', type: 'word', ex: [
-                    { t: "The road is rocky.", i: "/ðə rəʊd ɪz ˈrɑːki/", l: "A1" },
-                    { t: "It is hard to walk on rocky trails.", i: "/ɪt ɪz hɑːrd tə wɔːk ɑːn ˈrɑːki treɪlz/", l: "A2" },
-                    { t: "This rocky terrain requires a lot of concentration and balance.", i: "/ðɪs ˈrɑːki təˈreɪn rɪˈkwaɪɜːrz ə lɑːt əv ˌkɑːnsnˈtreɪʃn ænd ˈbæləns/", l: "B1" }
-                ]},
-                { w: "Reach the top", i: "/riːtʃ ðə tɑːp/", svg: 'rocky', type: 'chunk', ex: [
-                    { t: "We reach the top.", i: "/wiː riːtʃ ðə tɑːp/", l: "A1" },
-                    { t: "We will reach the top soon.", i: "/wiː wɪl riːtʃ ðə tɑːp suːn/", l: "A2" },
-                    { t: "It is a fantastic feeling when you finally reach the top of the mountain.", i: "/ɪt ɪz ə fænˈtæstɪk ˈfiːlɪŋ wen juː ˈfaɪnəli riːtʃ ðə tɑːp əv ðə ˈmaʊntn/", l: "B1" }
-                ]}
-            ]),
+const practiceQs=[
+  "Are you ready for the hike today?","Do you have enough water in your backpack?",
+  "Is your backpack too heavy to carry?","Do you need to stop and catch your breath?",
+  "How often should we take short breaks?","Can you keep a steady pace on this steep trail?",
+  "Did you listen to the guide's instructions?","Are your hiking boots comfortable on this rocky path?",
+  "Do you enjoy the mountain scenery when you stop?","What is your favorite thing to do by the campfire?",
+  "How do you feel when you finally reach the top?","Would you like to go trekking again next time?"
+];
 
-            // Slide 29
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-6 border-b-4 border-pastel-green pb-4 inline-block">Dictation 3 (Monologue)</h2>
-                     <p class="text-gray-500 mb-4 text-lg">Audio (Female) - ~100 words (Level A2-B1)</p>
-                     <button onclick="playConv3()" class="play-all-btn text-xl"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"></path></svg> Play</button>
-                     <div class="space-y-4 text-2xl mt-4 leading-relaxed bg-teal-50 p-6 rounded-2xl border border-teal-100">
-                        <p class="italic text-gray-700">"Hello again. We finally reached the campsite, and I feel amazing. The trek was challenging, especially the rocky sections, but the beautiful scenery made it worth it. I learned that good communication on the trail is very important. Alex, our guide, was great at giving clear instructions and keeping everyone safe. I also realized that pacing myself is better than rushing. Now, I am sitting by the campfire, drinking hot tea, and looking at the stars. This is a wonderful experience, and I cannot wait for tomorrow's hike."</p>
-                     </div>`},
-            
-            // Slide 30
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">Yes/No Questions (Reflex)</h2>
-                     <p class="text-gray-500 font-semibold mb-6 text-xl">(Level A1 - B1)</p>
-                     <ol class="list-decimal list-inside text-3xl space-y-8 text-gray-700 font-medium">
-                         <li>Did they finally reach the campsite?</li>
-                         <li>Does Sarah feel terrible right now?</li>
-                         <li>Was Alex good at giving clear instructions?</li>
-                         <li>Is Sarah drinking cold water by the campfire?</li>
-                     </ol>`},
-            // Slide 31
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">Yes/No Answers & IPA</h2>
-                     <div class="space-y-8 text-2xl font-medium">
-                         <div class="flex items-start"><button onclick="speak('Yes, they reached the campsite.', 'female')" class="play-btn">▶</button>
-                            <div><p>1. Yes, they reached the campsite.</p><p class="ipa-text">/jes, ðeɪ riːtʃt ðə ˈkæmpsaɪt/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('No, she feels amazing.', 'female')" class="play-btn">▶</button>
-                            <div><p>2. No, she feels amazing.</p><p class="ipa-text">/nəʊ, ʃiː fiːlz əˈmeɪzɪŋ/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('Yes, he was great at giving instructions.', 'female')" class="play-btn">▶</button>
-                            <div><p>3. Yes, he was great at giving instructions.</p><p class="ipa-text">/jes, hiː wəz ɡreɪt æt ˈɡɪvɪŋ ɪnˈstrʌkʃnz/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('No, she is drinking hot tea.', 'female')" class="play-btn">▶</button>
-                            <div><p>4. No, she is drinking hot tea.</p><p class="ipa-text">/nəʊ, ʃiː ɪz ˈdrɪŋkɪŋ hɑːt tiː/</p></div></div>
-                     </div>`},
-            // Slide 32
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">Wh- Questions (Reflex)</h2>
-                     <p class="text-gray-500 font-semibold mb-6 text-xl">(Level A1 - B1)</p>
-                     <ol class="list-decimal list-inside text-3xl space-y-8 text-gray-700 font-medium">
-                         <li>How does Sarah describe the trek?</li>
-                         <li>What made the challenging trek worth it?</li>
-                         <li>What did Sarah learn about walking on the trail?</li>
-                         <li>What is Sarah looking at right now?</li>
-                     </ol>`},
-            // Slide 33
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">Wh- Answers & IPA</h2>
-                     <div class="space-y-8 text-2xl font-medium">
-                         <div class="flex items-start"><button onclick="speak('She describes it as challenging.', 'female')" class="play-btn">▶</button>
-                            <div><p>1. She describes it as challenging.</p><p class="ipa-text">/ʃiː dɪˈskraɪbz ɪt æz ˈtʃælɪndʒɪŋ/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('The beautiful scenery made it worth it.', 'female')" class="play-btn">▶</button>
-                            <div><p>2. The beautiful scenery made it worth it.</p><p class="ipa-text">/ðə ˈbjuːtɪfl ˈsiːnɜːri meɪd ɪt wɜːrθ ɪt/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('She learned that pacing herself is better than rushing.', 'female')" class="play-btn">▶</button>
-                            <div><p>3. She learned that pacing herself is better than rushing.</p><p class="ipa-text">/ʃiː lɜːrnd ðæt ˈpeɪsɪŋ hɜːrˈself ɪz ˈbetɜːr ðæn ˈrʌʃɪŋ/</p></div></div>
-                         <div class="flex items-start"><button onclick="speak('She is looking at the stars.', 'female')" class="play-btn">▶</button>
-                            <div><p>4. She is looking at the stars.</p><p class="ipa-text">/ʃiː ɪz ˈlʊkɪŋ æt ðə stɑːrz/</p></div></div>
-                     </div>`},
-                     
-            // Generate Pronunciation 34-37
-            genPronunSlide("Pronunciation & Shadowing (9/12)", [
-                { t: "Hello again. We finally reached the campsite, and I feel amazing.", i: "/həˈləʊ əˈɡen. wiː ˈfaɪnəli riːtʃt ðə ˈkæmpsaɪt, ænd aɪ fiːl əˈmeɪzɪŋ/", r: "female" },
-                { t: "The trek was challenging, especially the rocky sections.", i: "/ðə trek wəz ˈtʃælɪndʒɪŋ, ɪˈspeʃəli ðə ˈrɑːki ˈsekʃnz/", r: "female" }
-            ]),
-            genPronunSlide("Pronunciation & Shadowing (10/12)", [
-                { t: "But the beautiful scenery made it worth it.", i: "/bʌt ðə ˈbjuːtɪfl ˈsiːnɜːri meɪd ɪt wɜːrθ ɪt/", r: "female" },
-                { t: "I learned that good communication on the trail is very important.", i: "/aɪ lɜːrnd ðæt ɡʊd kəˌmjuːnɪˈkeɪʃn ɑːn ðə treɪl ɪz ˈveri ɪmˈpɔːrtnt/", r: "female" }
-            ]),
-            genPronunSlide("Pronunciation & Shadowing (11/12)", [
-                { t: "Alex, our guide, was great at giving clear instructions and keeping everyone safe.", i: "/ˈæleks, aʊɜːr ɡaɪd, wəz ɡreɪt æt ˈɡɪvɪŋ klɪr ɪnˈstrʌkʃnz ænd ˈkiːpɪŋ ˈevriwʌn seɪf/", r: "female" },
-                { t: "I also realized that pacing myself is better than rushing.", i: "/aɪ ˈɔːlsəʊ ˈriːəlaɪzd ðæt ˈpeɪsɪŋ maɪˈself ɪz ˈbetɜːr ðæn ˈrʌʃɪŋ/", r: "female" }
-            ]),
-            genPronunSlide("Pronunciation & Shadowing (12/12)", [
-                { t: "Now, I am sitting by the campfire, drinking hot tea, and looking at the stars.", i: "/naʊ, aɪ æm ˈsɪtɪŋ baɪ ðə ˈkæmpfaɪɜːr, ˈdrɪŋkɪŋ hɑːt tiː, ænd ˈlʊkɪŋ æt ðə stɑːrz/", r: "female" },
-                { t: "This is a wonderful experience, and I cannot wait for tomorrow's hike.", i: "/ðɪs ɪz ə ˈwʌndɜːrfl ɪkˈspɪriəns, ænd aɪ ˈkænɑːt weɪt fɔːr təˈmɑːrəʊz haɪk/", r: "female" }
-            ]),
+// ── RENDER ────────────────────────────────────────────
+function renderQA(listId,data){
+  const el=document.getElementById(listId);
+  el.innerHTML=data.map(d=>`<div class="qa-item">
+    <div class="qa-q">❓ ${d.q}</div>
+    <div class="qa-a"><button class="play-btn" onclick="speak('${d.a.replace(/'/g,"\\'")}')">🔊</button><div><div>${d.a}</div><div class="ipa">${d.i}</div></div></div>
+  </div>`).join('');
+}
+function renderShadow(listId,data){
+  const el=document.getElementById(listId);
+  el.innerHTML=data.map(d=>`<div class="shadow-item">
+    <button class="play-btn" onclick="speak('${d.t.replace(/'/g,"\\'")}','${d.r}')">🔊</button>
+    <div class="shadow-text"><div class="shadow-en">${d.t}</div><div class="shadow-ipa">${d.i}</div></div>
+  </div>`).join('');
+}
+function renderVocab(gridId,data){
+  const el=document.getElementById(gridId);
+  el.innerHTML=data.map(d=>`<div class="vocab-card">
+    <span class="vocab-type type-${d.type}">${d.type==='word'?'Word':'Chunk'}</span>
+    <div class="vocab-word">${d.w}<button class="play-btn" onclick="speak('${d.w.replace(/'/g,"\\'")}')">🔊</button></div>
+    <div class="vocab-ipa">${d.i}</div>
+    <div class="vocab-ex">${d.ex.map(e=>`<div class="ex-item"><button class="play-btn" onclick="speak('${e.t.replace(/'/g,"\\'")}')">🔊</button><div class="ex-text">${e.t} <span class="level">${e.l}</span></div></div>`).join('')}</div>
+  </div>`).join('');
+}
+function renderPractice(){
+  document.getElementById('practice-list').innerHTML=practiceQs.map((q,i)=>`<div class="practice-q">${i+1}. ${q}</div>`).join('');
+}
 
-            // Vocab 38-41
-            genVocabSlide([
-                { w: "Scenery", i: "/ˈsiːnɜːri/", svg: 'scenery', type: 'word', ex: [
-                    { t: "The scenery is nice.", i: "/ðə ˈsiːnɜːri ɪz naɪs/", l: "A1" },
-                    { t: "I love the mountain scenery.", i: "/aɪ lʌv ðə ˈmaʊntn ˈsiːnɜːri/", l: "A2" },
-                    { t: "Taking photos of the natural scenery is my favorite hobby.", i: "/ˈteɪkɪŋ ˈfəʊtəʊz əv ðə ˈnætʃrəl ˈsiːnɜːri ɪz maɪ ˈfeɪvɜːrɪt ˈhɑːbi/", l: "B1" }
-                ]},
-                { w: "Feel amazing", i: "/fiːl əˈmeɪzɪŋ/", svg: 'scenery', type: 'chunk', ex: [
-                    { t: "I feel amazing today.", i: "/aɪ fiːl əˈmeɪzɪŋ təˈdeɪ/", l: "A1" },
-                    { t: "You will feel amazing after the walk.", i: "/juː wɪl fiːl əˈmeɪzɪŋ /ˈæftɜːr ðə wɔːk/", l: "A2" },
-                    { t: "Even though my legs hurt, I still feel amazing about this achievement.", i: "/ˈiːvn ðəʊ maɪ leɡz hɜːrt, aɪ stɪl fiːl əˈmeɪzɪŋ əˈbaʊt ðɪs əˈtʃiːvmənt/", l: "B1" }
-                ]}
-            ]),
-            genVocabSlide([
-                { w: "Instruction", i: "/ɪnˈstrʌkʃn/", svg: 'instruction', type: 'word', ex: [
-                    { t: "Listen to the instruction.", i: "/ˈlɪsn tə ðə ɪnˈstrʌkʃn/", l: "A1" },
-                    { t: "His instructions are clear.", i: "/hɪz ɪnˈstrʌkʃnz ɑːr klɪr/", l: "A2" },
-                    { t: "You must follow the safety instructions to avoid accidents on the trail.", i: "/juː mʌst ˈfɑːləʊ ðə ˈseɪfti ɪnˈstrʌkʃnz tə əˈvɔɪd ˈæksɪdənts ɑːn ðə treɪl/", l: "B1" }
-                ]},
-                { w: "Pace myself", i: "/peɪs maɪˈself/", svg: 'instruction', type: 'chunk', ex: [
-                    { t: "I pace myself.", i: "/aɪ peɪs maɪˈself/", l: "A1" },
-                    { t: "I try to pace myself on the steep hills.", i: "/aɪ traɪ tə peɪs maɪˈself ɑːn ðə stiːp hɪlz/", l: "A2" },
-                    { t: "It is crucial to pace myself so I do not run out of energy too soon.", i: "/ɪt ɪz ˈkruːʃl tə peɪs maɪˈself səʊ aɪ duː nɑːt rʌn aʊt əv ˈenɜːrdʒi tuː suːn/", l: "B1" }
-                ]}
-            ]),
-            genVocabSlide([
-                { w: "Campfire", i: "/ˈkæmpfaɪɜːr/", svg: 'campfire', type: 'word', ex: [
-                    { t: "The campfire is hot.", i: "/ðə ˈkæmpfaɪɜːr ɪz hɑːt/", l: "A1" },
-                    { t: "We sit around the campfire.", i: "/wiː sɪt əˈraʊnd ðə ˈkæmpfaɪɜːr/", l: "A2" },
-                    { t: "Sharing stories by the campfire is the best part of camping.", i: "/ˈʃerɪŋ ˈstɔːriz baɪ ðə ˈkæmpfaɪɜːr ɪz ðə best pɑːrt əv ˈkæmpɪŋ/", l: "B1" }
-                ]},
-                { w: "Make it worth it", i: "/meɪk ɪt wɜːrθ ɪt/", svg: 'campfire', type: 'chunk', ex: [
-                    { t: "The view makes it worth it.", i: "/ðə vjuː meɪks ɪt wɜːrθ ɪt/", l: "A1" },
-                    { t: "Good food makes the effort worth it.", i: "/ɡʊd fuːd meɪks ðə ˈefɜːrt wɜːrθ ɪt/", l: "A2" },
-                    { t: "Reaching the summit definitely makes all the hard work worth it.", i: "/ˈriːtʃɪŋ ðə ˈsʌmɪt ˈdefɪnətli meɪks ɔːl ðə hɑːrd wɜːrk wɜːrθ ɪt/", l: "B1" }
-                ]}
-            ]),
-            genVocabSlide([
-                { w: "Challenging", i: "/ˈtʃælɪndʒɪŋ/", svg: 'challenging', type: 'word', ex: [
-                    { t: "The hike is challenging.", i: "/ðə haɪk ɪz ˈtʃælɪndʒɪŋ/", l: "A1" },
-                    { t: "This path is very challenging today.", i: "/ðɪs pæθ ɪz ˈveri ˈtʃælɪndʒɪŋ təˈdeɪ/", l: "A2" },
-                    { t: "Overcoming a challenging trail gives you a lot of confidence.", i: "/ˌəʊvɜːrˈkʌmɪŋ ə ˈtʃælɪndʒɪŋ treɪl ɡɪvz juː ə lɑːt əv ˈkɑːnfɪdəns/", l: "B1" }
-                ]},
-                { w: "Cannot wait for", i: "/ˈkænɑːt weɪt fɔːr/", svg: 'challenging', type: 'chunk', ex: [
-                    { t: "I cannot wait for tomorrow.", i: "/aɪ ˈkænɑːt weɪt fɔːr təˈmɑːrəʊ/", l: "A1" },
-                    { t: "I cannot wait for the next trip.", i: "/aɪ ˈkænɑːt weɪt fɔːr ðə nekst trɪp/", l: "A2" },
-                    { t: "I had such a great time that I cannot wait for our next trekking adventure.", i: "/aɪ hæd sʌtʃ ə ɡreɪt taɪm ðæt aɪ ˈkænɑːt weɪt fɔːr aʊɜːr nekst ˈtrekɪŋ ədˈventʃɜːr/", l: "B1" }
-                ]}
-            ]),
+// ── TABS ──────────────────────────────────────────────
+function switchTab(unit,tab,btn){
+  document.querySelectorAll(`[id^="${unit}-"]`).forEach(el=>{el.classList.remove('active');});
+  document.getElementById(`${unit}-${tab}`).classList.add('active');
+  btn.closest('.tabs').querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
 
-            // Slide 42
-            { html: `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">End of Lesson - Reflex Practice</h2>
-                     <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-2xl text-gray-700 font-medium h-full">
-                         <div class="space-y-4">
-                             <p>1. Are you ready for the hike today?</p>
-                             <p>2. Do you have enough water in your backpack?</p>
-                             <p>3. Is your backpack too heavy to carry?</p>
-                             <p>4. Do you need to stop and catch your breath?</p>
-                             <p>5. How often should we take short breaks?</p>
-                         </div>
-                         <div class="space-y-4">
-                             <p>6. Can you keep a steady pace on this steep trail?</p>
-                             <p>7. Did you listen to the guide's instructions?</p>
-                             <p>8. Are your hiking boots comfortable on this rocky path?</p>
-                             <p>9. Do you enjoy the mountain scenery when we stop?</p>
-                             <p>10. What is your favorite thing to do by the campfire?</p>
-                         </div>
-                     </div>` }
-        ];
+// ── TTS ───────────────────────────────────────────────
+let voices=[];
+const mSel=document.getElementById('voice-male');
+const fSel=document.getElementById('voice-female');
+function populateVoices(){
+  voices=speechSynthesis.getVoices();
+  if(!voices.length)return;
+  const en=voices.filter(v=>v.lang.startsWith('en'));
+  [mSel,fSel].forEach(sel=>{sel.innerHTML='';en.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=`${v.name} (${v.lang})`;sel.appendChild(o);});});
+  const male=en.find(v=>/(andrew|brian|guy|male)/i.test(v.name));
+  const female=en.find(v=>/(emma|ava|zira|female|sonia)/i.test(v.name));
+  if(male)mSel.value=male.name;
+  if(female)fSel.value=female.name;
+}
+if(speechSynthesis.onvoiceschanged!==undefined)speechSynthesis.onvoiceschanged=populateVoices;
 
-        // Generators
-        function genPronunSlide(title, items) {
-            let html = `<h2 class="text-4xl font-bold text-teal-700 mb-8 border-b-4 border-pastel-green pb-4 inline-block">${title}</h2>
-                        <div class="space-y-8">`;
-            items.forEach(it => {
-                html += `<div class="flex items-start">
-                            <button onclick="speak('${it.t.replace(/'/g,"\\'")}', '${it.r}')" class="play-btn text-xl mt-1">▶</button>
-                            <div>
-                                <p class="text-3xl font-medium text-gray-800 mb-1">${it.t}</p>
-                                <p class="ipa-text text-xl">${it.i}</p>
-                            </div>
-                         </div>`;
-            });
-            html += `</div>`;
-            return { html };
-        }
+function speak(text,role='female'){
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  const name=role==='male'?mSel.value:fSel.value;
+  const v=voices.find(x=>x.name===name);
+  if(v)u.voice=v;
+  speechSynthesis.speak(u);
+}
+async function playConv(lines){
+  speechSynthesis.cancel();
+  for(const line of lines){
+    await new Promise(res=>{
+      const u=new SpeechSynthesisUtterance(line.t);
+      const name=line.r==='male'?mSel.value:fSel.value;
+      const v=voices.find(x=>x.name===name);
+      if(v)u.voice=v;
+      u.onend=res;u.onerror=res;
+      speechSynthesis.speak(u);
+    });
+    await new Promise(r=>setTimeout(r,400));
+  }
+}
 
-        function genVocabSlide(items) {
-            let html = `<div class="flex w-full h-full gap-8">`;
-            items.forEach(it => {
-                const hlClass = it.type === 'word' ? 'hl-word' : 'hl-chunk';
-                const prefix = it.type === 'word' ? '(Word)' : '(Chunk)';
-                html += `<div class="w-1/2 flex flex-col h-full bg-teal-50/50 p-6 rounded-2xl border-2 border-teal-100 relative">
-                            <div class="mb-4">
-                                <span class="text-sm font-bold text-gray-500 uppercase tracking-widest">${prefix}</span>
-                                <h3 class="text-4xl font-extrabold text-teal-800 flex items-center gap-3">
-                                    ${it.w} <button onclick="speak('${it.w.replace(/'/g,"\\'")}')" class="play-btn w-8 h-8 text-sm">▶</button>
-                                </h3>
-                                <p class="text-xl text-gray-500 font-mono mt-1">${it.i}</p>
-                            </div>
-                            <div class="my-4 flex-shrink-0">
-                                ${svgs[it.svg] || ''}
-                            </div>
-                            <div class="space-y-4 mt-auto">`;
-                it.ex.forEach(ex => {
-                    html += `<div class="flex items-start bg-white p-3 rounded-xl shadow-sm border border-gray-100">
-                                <button onclick="speak('${ex.t.replace(/'/g,"\\'")}')" class="play-btn w-6 h-6 text-xs mt-1">▶</button>
-                                <div class="flex-1">
-                                    <p class="text-lg font-medium text-gray-700">${ex.t} <span class="text-sm font-bold text-teal-600 bg-teal-100 px-2 py-1 rounded ml-2">${ex.l}</span></p>
-                                    <p class="ipa-text text-sm">${ex.i}</p>
-                                </div>
-                             </div>`;
-                });
-                html += `   </div>
-                         </div>`;
-            });
-            html += `</div>`;
-            return { html };
-        }
+// ── SETTINGS ──────────────────────────────────────────
+function toggleSettings(){
+  const p=document.getElementById('settings-panel');
+  p.classList.toggle('show');
+  if(voices.length===0)populateVoices();
+}
 
-        // --- APP LOGIC ---
-        let currentSlide = 0;
-        const container = document.getElementById('presentation-container');
-        const counter = document.getElementById('slide-counter');
+// ── NAV ACTIVE ────────────────────────────────────────
+const navLinks=document.querySelectorAll('.nav-links a');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(l=>l.classList.remove('active'));const a=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);if(a)a.classList.add('active');}});
+},{threshold:0.3});
+document.querySelectorAll('[id]').forEach(s=>observer.observe(s));
 
-        function initSlides() {
-            slidesData.forEach((s, index) => {
-                const el = document.createElement('div');
-                el.className = `slide-element ${index === 0 ? 'active' : ''}`;
-                el.innerHTML = s.html;
-                container.appendChild(el);
-            });
-            updateUI();
-        }
-
-        function updateUI() {
-            const slides = document.querySelectorAll('.slide-element');
-            slides.forEach((el, i) => {
-                if (i === currentSlide) {
-                    el.classList.add('active');
-                } else {
-                    el.classList.remove('active');
-                }
-            });
-            counter.innerText = `${currentSlide + 1} / ${slidesData.length}`;
-        }
-
-        function nextSlide() {
-            if (currentSlide < slidesData.length - 1) {
-                currentSlide++;
-                updateUI();
-            }
-        }
-
-        function prevSlide() {
-            if (currentSlide > 0) {
-                currentSlide--;
-                updateUI();
-            }
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
-            if (e.key === 'ArrowLeft') prevSlide();
-        });
-
-        // --- SPEECH SYNTHESIS API ---
-        let voices = [];
-        const maleSelect = document.getElementById('voice-male');
-        const femaleSelect = document.getElementById('voice-female');
-
-        function populateVoiceList() {
-            voices = speechSynthesis.getVoices();
-            if (voices.length === 0) return;
-
-            maleSelect.innerHTML = '';
-            femaleSelect.innerHTML = '';
-
-            // Filter US English voices for better defaults
-            const enVoices = voices.filter(v => v.lang.includes('en-US') || v.lang.includes('en-GB'));
-            
-            enVoices.forEach((voice, i) => {
-                const optionMale = document.createElement('option');
-                const optionFemale = document.createElement('option');
-                
-                optionMale.textContent = `${voice.name} (${voice.lang})`;
-                optionFemale.textContent = `${voice.name} (${voice.lang})`;
-                optionMale.value = voice.name;
-                optionFemale.value = voice.name;
-
-                // Attempt to auto-select Natural or known names
-                if (voice.name.includes('Andrew') || voice.name.includes('Brian') || voice.name.includes('Male')) {
-                    optionMale.selected = true;
-                }
-                if (voice.name.includes('Emma') || voice.name.includes('Ava') || voice.name.includes('Female') || voice.name.includes('Zira')) {
-                    optionFemale.selected = true;
-                }
-
-                maleSelect.appendChild(optionMale);
-                femaleSelect.appendChild(optionFemale);
-            });
-        }
-
-        if (speechSynthesis.onvoiceschanged !== undefined) {
-            speechSynthesis.onvoiceschanged = populateVoiceList;
-        }
-
-        function speak(text, role = 'female') {
-            speechSynthesis.cancel();
-            if (text === '') return;
-            const utterThis = new SpeechSynthesisUtterance(text);
-            
-            const selectedMaleName = maleSelect.value;
-            const selectedFemaleName = femaleSelect.value;
-            
-            let targetVoiceName = role === 'male' ? selectedMaleName : selectedFemaleName;
-            
-            const selectedVoice = voices.find(v => v.name === targetVoiceName);
-            if (selectedVoice) {
-                utterThis.voice = selectedVoice;
-            }
-            
-            speechSynthesis.speak(utterThis);
-        }
-
-        // Play Conversation Sequences
-        async function playSequence(lines) {
-            speechSynthesis.cancel();
-            for (let line of lines) {
-                await new Promise(resolve => {
-                    const utterance = new SpeechSynthesisUtterance(line.text);
-                    const selectedMaleName = maleSelect.value;
-                    const selectedFemaleName = femaleSelect.value;
-                    let targetVoiceName = line.role === 'male' ? selectedMaleName : selectedFemaleName;
-                    
-                    const selectedVoice = voices.find(v => v.name === targetVoiceName);
-                    if (selectedVoice) utterance.voice = selectedVoice;
-                    
-                    utterance.onend = resolve;
-                    // Failsafe resolve
-                    utterance.onerror = resolve; 
-                    speechSynthesis.speak(utterance);
-                });
-                // Short pause between speakers
-                await new Promise(r => setTimeout(r, 400));
-            }
-        }
-
-        function playConv1() {
-            playSequence([
-                { text: "Hello, everyone! Welcome to the mountain trail. My name is Alex, and I will be your guide today. Are you ready for the hike?", role: "male" },
-                { text: "Hi Alex. I am Sarah. Yes, I am very excited, but a little nervous. Is the trail very difficult?", role: "female" },
-                { text: "Nice to meet you, Sarah. Do not worry. The first part is easy, but it gets steeper later. Do you have enough water and snacks in your backpack?", role: "male" },
-                { text: "Yes, I have two bottles of water and some energy bars. Should I wear my jacket now?", role: "female" },
-                { text: "No, it is quite warm right now. You can keep it in your bag. We will take short breaks every thirty minutes. Let's start walking and enjoy the beautiful nature!", role: "male" }
-            ]);
-        }
-
-        function playConv2() {
-            playSequence([
-                { text: "How is everyone doing? We are halfway to the top. Sarah, are your hiking boots comfortable?", role: "male" },
-                { text: "Yes, they are fine, thank you. But my backpack feels a bit heavy. Can we stop for a moment? I need to catch my breath.", role: "female" },
-                { text: "Of course. Let's take a five-minute break here by the river. Remember to drink plenty of water to stay hydrated.", role: "male" },
-                { text: "Look at that view! The mountains are stunning from here. How much longer until we reach the campsite?", role: "female" },
-                { text: "It will take about two more hours. The path ahead is a bit rocky, so please watch your step. Keep a steady pace, and we will be there before sunset.", role: "male" }
-            ]);
-        }
-        
-        function playConv3() {
-            playSequence([
-                { text: "Hello again. We finally reached the campsite, and I feel amazing. The trek was challenging, especially the rocky sections, but the beautiful scenery made it worth it. I learned that good communication on the trail is very important. Alex, our guide, was great at giving clear instructions and keeping everyone safe. I also realized that pacing myself is better than rushing. Now, I am sitting by the campfire, drinking hot tea, and looking at the stars. This is a wonderful experience, and I cannot wait for tomorrow's hike.", role: "female" }
-            ]);
-        }
-
-        function toggleSettings() {
-            const modal = document.getElementById('settings-modal');
-            modal.classList.toggle('show');
-            if(voices.length === 0) populateVoiceList();
-        }
-
-        // Init
-        window.onload = () => {
-            initSlides();
-            // Force load voices for some browsers
-            setTimeout(populateVoiceList, 1000); 
-        };
-    </script>
+// ── INIT ──────────────────────────────────────────────
+window.onload=()=>{
+  renderQA('u1-qa-list',u1QA);renderShadow('u1-shadow-list',u1Shadow);renderVocab('u1-vocab-grid',u1Vocab);
+  renderQA('u2-qa-list',u2QA);renderShadow('u2-shadow-list',u2Shadow);renderVocab('u2-vocab-grid',u2Vocab);
+  renderQA('u3-qa-list',u3QA);renderShadow('u3-shadow-list',u3Shadow);renderVocab('u3-vocab-grid',u3Vocab);
+  renderPractice();
+  setTimeout(populateVoices,800);
+};
+</script>
 </body>
 </html>
