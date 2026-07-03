@@ -105,6 +105,23 @@ nav{position:sticky;top:0;z-index:100;background:var(--green-900);padding:.75rem
   .practice-grid{grid-template-columns:1fr}
   .unit-card{min-width:120px;font-size:.85rem}
 }
+
+/* Pronunciation Feedback */
+.record-btn{background:none;border:2px solid #e76f51;border-radius:50%;width:2rem;height:2rem;font-size:.9rem;cursor:pointer;transition:.2s;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center}
+.record-btn:hover{background:#e76f51;color:#fff}
+.record-btn.recording{background:#e74c3c;border-color:#e74c3c;color:#fff;animation:pulse .8s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.fb-panel{display:none;margin-top:.6rem;background:#f8faf8;border:1.5px solid #74c69d;border-radius:.75rem;padding:.75rem 1rem;font-size:.85rem}
+.fb-panel.show{display:block}
+.fb-heard{color:#5a7a5a;margin-bottom:.4rem;font-style:italic}
+.fb-words{line-height:2;margin-bottom:.4rem;font-size:.95rem;font-weight:600}
+.fb-correct{background:#d8f3dc;color:#1b4332;padding:.1rem .3rem;border-radius:.3rem;margin:0 .1rem}
+.fb-close{background:#fff3e0;color:#e65100;padding:.1rem .3rem;border-radius:.3rem;margin:0 .1rem}
+.fb-wrong{background:#fde8e8;color:#c0392b;padding:.1rem .3rem;border-radius:.3rem;margin:0 .1rem;text-decoration:line-through}
+.fb-score{font-weight:800;font-size:1rem;margin-bottom:.2rem}
+.fb-tip{color:#5a7a5a;font-size:.82rem}
+.fb-actions{margin-top:.5rem;display:flex;gap:.5rem}
+.fb-retry{background:#40916c;color:#fff;border:none;border-radius:1rem;padding:.3rem .8rem;font-size:.8rem;cursor:pointer;font-family:inherit}
 </style>
 </head>
 <body>
@@ -390,17 +407,18 @@ const practiceQs=[
 // ── RENDER ────────────────────────────────────────────
 function renderQA(listId,data){
   const el=document.getElementById(listId);
-  el.innerHTML=data.map(d=>`<div class="qa-item">
+  el.innerHTML=data.map(d=>{const fid='fb-'+(++fbCounter);return`<div class="qa-item">
     <div class="qa-q">❓ ${d.q}</div>
-    <div class="qa-a"><button class="play-btn" onclick="speak('${d.a.replace(/'/g,"\\'")}')">🔊</button><div><div>${d.a}</div><div class="ipa">${d.i}</div></div></div>
-  </div>`).join('');
+    <div class="qa-a"><button class="play-btn" onclick="speak('${d.a.replace(/'/g,"\\'")}')">🔊</button><button class="record-btn" data-fb="${fid}" onclick="recordFeedback('${d.a.replace(/'/g,"\\'")}','${fid}')">🎤</button><div><div>${d.a}</div><div class="ipa">${d.i}</div><div class="fb-panel" id="${fid}"></div></div></div>
+  </div>`;}).join('');
 }
 function renderShadow(listId,data){
   const el=document.getElementById(listId);
-  el.innerHTML=data.map(d=>`<div class="shadow-item">
+  el.innerHTML=data.map(d=>{const fid='fb-'+(++fbCounter);return`<div class="shadow-item">
     <button class="play-btn" onclick="speak('${d.t.replace(/'/g,"\\'")}','${d.r}')">🔊</button>
-    <div class="shadow-text"><div class="shadow-en">${d.t}</div><div class="shadow-ipa">${d.i}</div></div>
-  </div>`).join('');
+    <button class="record-btn" data-fb="${fid}" onclick="recordFeedback('${d.t.replace(/'/g,"\\'")}','${fid}')">🎤</button>
+    <div class="shadow-text"><div class="shadow-en">${d.t}</div><div class="shadow-ipa">${d.i}</div><div class="fb-panel" id="${fid}"></div></div>
+  </div>`;}).join('');
 }
 function renderVocab(gridId,data){
   const el=document.getElementById(gridId);
@@ -475,6 +493,79 @@ const observer=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(l=>l.classList.remove('active'));const a=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);if(a)a.classList.add('active');}});
 },{threshold:0.3});
 document.querySelectorAll('[id]').forEach(s=>observer.observe(s));
+
+
+// ── PRONUNCIATION RECORDER ────────────────────────────
+const SRClass = window.SpeechRecognition || window.webkitSpeechRecognition;
+let activeRec = null;
+let fbCounter = 0;
+
+function lev(a,b){
+  const m=a.length,n=b.length,d=[];
+  for(let i=0;i<=m;i++)d[i]=[i];
+  for(let j=0;j<=n;j++)d[0][j]=j;
+  for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)
+    d[i][j]=a[i-1]===b[j-1]?d[i-1][j-1]:1+Math.min(d[i-1][j],d[i][j-1],d[i-1][j-1]);
+  return d[m][n];
+}
+
+function recordFeedback(expectedText, fbId) {
+  if (!SRClass) { alert('Please use Chrome or Edge for this feature.'); return; }
+  if (activeRec) { try{activeRec.stop();}catch(e){} }
+
+  const panel = document.getElementById(fbId);
+  const btn = document.querySelector(`[data-fb="${fbId}"]`);
+
+  activeRec = new SRClass();
+  activeRec.lang = 'en-US';
+  activeRec.interimResults = false;
+  activeRec.maxAlternatives = 1;
+
+  panel.className = 'fb-panel show';
+  panel.innerHTML = '<span style="color:#e76f51">🔴 Listening… speak now!</span>';
+  if(btn){ btn.classList.add('recording'); btn.textContent='⏹'; }
+
+  activeRec.onresult = (e) => {
+    const spoken = e.results[0][0].transcript;
+    const conf = Math.round(e.results[0][0].confidence * 100);
+    showPronFeedback(panel, expectedText, spoken, conf);
+    if(btn){ btn.classList.remove('recording'); btn.textContent='🎤'; }
+  };
+  activeRec.onerror = (e) => {
+    panel.innerHTML = `<span style="color:#c0392b">⚠️ ${e.error === 'not-allowed' ? 'Microphone blocked — allow access in browser settings.' : 'Could not detect speech. Try again.'}</span>`;
+    if(btn){ btn.classList.remove('recording'); btn.textContent='🎤'; }
+  };
+  activeRec.onend = () => { activeRec = null; if(btn&&btn.classList.contains('recording')){ btn.classList.remove('recording'); btn.textContent='🎤'; } };
+  activeRec.start();
+}
+
+function showPronFeedback(el, expected, spoken, conf) {
+  const clean = s => s.toLowerCase().replace(/[^a-z0-9\s]/g,'').trim();
+  const expW = clean(expected).split(/\s+/);
+  const spkW = clean(spoken).split(/\s+/);
+
+  let correct = 0;
+  const wordsHtml = expW.map(w => {
+    if (spkW.includes(w)) { correct++; return `<span class="fb-correct">${w}</span>`; }
+    const sim = spkW.find(s => lev(s,w) <= 1);
+    if (sim) { correct += 0.7; return `<span class="fb-close" title="You said: ${sim}">${w}</span>`; }
+    return `<span class="fb-wrong">${w}</span>`;
+  }).join(' ');
+
+  const score = Math.round((correct / expW.length) * 100);
+  const star = score >= 90 ? '🌟 Excellent!' : score >= 70 ? '👍 Good job!' : score >= 50 ? '🔄 Keep trying!' : '💪 Practice more!';
+  const tip = score < 70 ? '<div class="fb-tip">🟡 Yellow = close &nbsp; 🔴 Red = missing &nbsp; 🟢 Green = correct</div>' : '';
+
+  el.innerHTML = `
+    <div class="fb-heard">You said: "<em>${spoken}</em>"</div>
+    <div class="fb-words">${wordsHtml}</div>
+    <div class="fb-score">${star} — ${score}%</div>
+    ${tip}
+    <div class="fb-actions"><button class="fb-retry" onclick="this.closest('.fb-panel').style.display='none'">✕ Close</button></div>
+  `;
+}
+
+function makeFbId() { return 'fb-' + (++fbCounter); }
 
 // ── INIT ──────────────────────────────────────────────
 window.onload=()=>{
